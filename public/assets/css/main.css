@@ -284,9 +284,9 @@ section {
 .page-title {
     position: relative;
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-        url("../images/PageTitle/PageTitle.png");
+        url("/assets/images/page-title.png");
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-        url("../images/PageTitle/PageTitle.png");
+        url("/assets/images/page-title.png");
     min-height: 45rem;
     background-repeat: no-repeat;
     background-size: cover;

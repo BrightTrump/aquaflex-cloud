@@ -22,11 +22,11 @@ class AdminMiddleware
                 return $next($request);
             }
             else{
-                return redirect('/')->with('message','Access denied as you are not an administrator!');
+                return redirect()->back()->with('message','Access denied as you are not an administrator!');
             }
         }
         else{
-            return redirect('/')->with('message','Login to access dashboard!');
+            return redirect('/login')->with('message','Login to access dashboard!');
         }
     }
 }
