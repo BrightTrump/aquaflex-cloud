@@ -8,24 +8,52 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Title -->
+    <title>AquaFlex | Water & Blackcurrant Delivery Company</title>
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
 
+    <!-- Magnific-Popup (CSS) -->
+    <link rel="stylesheet" href="/vendors/magnific-popup/magnific-popup.css" />
+
+    <!-- Swiper (CSS) -->
+    <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
+
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
+<body>
+    <!-- ==================== Scroll-Top Area (Start) ==================== -->
+    <a href="#" class="scroll-top">
+      <i class="fas fa-long-arrow-alt-up"></i>
+    </a>
+    <!-- ==================== Scroll-Top Area (End) ==================== -->
+
     {{ $slot }}
+
+    <!-- Jquery -->
+    <script src="/vendors/jquery/jquery-3.6.0.js"></script>
+
+    <!-- Magnific-Popup JS -->
+    <script src="/vendors/magnific-popup/jquery.magnific-popup.js"></script>
+
+    <!-- Swiper (JS) -->
+    <script src="/vendors/swiper/swiper.js"></script>
+
+    <!-- Custom Script Files -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/nav-link-toggler.js"></script>
+    <script src="/assets/js/home-slider.js"></script>
+    <script src="/assets/js/counter-up.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/testi-slider.js"></script>
+    <script src="/assets/js/sponsor-slider.js"></script>
 </body>
 
 </html>
