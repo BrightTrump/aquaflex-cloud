@@ -1,47 +1,79 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+    <!-- Font-Awesome (CSS) -->
+    <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+    {{-- @vite(['resources/css/app.css']); --}}
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+</head>
 
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+<body>
+    <!-- ==================== Scroll-Top Area (Start) ==================== -->
+    <a href="#" class="scroll-top">
+        <i class="fas fa-long-arrow-alt-up"></i>
+    </a>
+    <!-- ==================== Scroll-Top Area (End) ==================== -->
+
+    <!-- ==================== Login Area (Start) ==================== -->
+    <section class="login staff-login">
+        <form class="account-form" method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="icon"><i class="fa-solid fa-user"></i></div>
+            <h3>Login</h3>
+
+            <div class="input-field">
+                <input type="email" name="email" placeholder="Email" id="email" class="box" />
+                <label for="email" class="far fa-envelope"></label>
+            </div>
+            <x-input-error :messages="$errors->get('email')" class="mt-2 input-error" />
+
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Password" id="password" class="box" />
+                <label for="password" class="fas fa-lock"></label>
+            </div>
+            <x-input-error :messages="$errors->get('password')" class="mt-2 input-error" />
+
+            <div class="info">
+                <div class="remember">
+                    <input type="checkbox" name="remember" id="remember-me" />
+                    <label for="remember-me"> Remember me </label>
+                </div>
+                <div class="forgot">
+                    <a class="link" href="Reset-Password.html">Forgot Password?</a>
+                </div>
+            </div>
+            <button type="submit" class="btn" name="login" id="login-btn">
+                Login
+            </button>
+            <p>
+                Don't have an account?
+                <a class="link" href="/register">Register</a>
+            </p>
+        </form>
+    </section>
+
+    <!-- Jquery -->
+    <script src="/vendors/jquery/jquery-3.6.0.js"></script>
+
+    <!-- Custom Script Files -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/nav-link-toggler.js"></script>
+</body>
+
+</html>

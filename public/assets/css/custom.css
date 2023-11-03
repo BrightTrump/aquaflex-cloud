@@ -1,0 +1,30 @@
+.staff-login {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(15, 27, 71, 0.4)),
+        url("../images/PageTitle/PageTitle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.box-select {
+    width: 100%;
+    font-size: 1.6rem;
+    background: transparent;
+    color: var(--black);
+    padding: 1rem 0px;
+    text-transform: none;
+}
+
+.box-select:first-child {
+    /* Add your custom styles for the first option here */
+    background-color: none;
+    color: #fff;
+}
+
+.input-error{
+    color:  #FFA500;
+    display: block;
+    list-style: none;
+    font-size: 14px;
+}
