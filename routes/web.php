@@ -20,8 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/about', function () {
     return view('about');
 });
@@ -51,7 +49,6 @@ Route::get('/contact', function () {
 });
 
 
->>>>>>> 84aad0a6da6b7b3809e4239de2b6f1fbd95eba05
 
 Route::get('/dashboard', function () {
     return view('dashboard');
