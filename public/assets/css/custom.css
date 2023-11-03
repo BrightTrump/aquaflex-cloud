@@ -1,10 +1,11 @@
 .staff-login {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(15, 27, 71, 0.4)),
-        url("../images/PageTitle/PageTitle.png");
+        url("/assets/images/page-title.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+    padding: 10rem 0;
 }
 
 .box-select {
@@ -22,8 +23,8 @@
     color: #fff;
 }
 
-.input-error{
-    color:  #FFA500;
+.input-error {
+    color: #ffa500;
     display: block;
     list-style: none;
     font-size: 14px;

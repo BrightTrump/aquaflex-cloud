@@ -3911,6 +3911,11 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .checkout .heading h2 {
+    text-transform: capitalize;
+    font-size: 3.5rem;
+}
+.checkout .summary-item {
+    text-transform: capitalize;
     font-size: 3.5rem;
 }
 

@@ -55,7 +55,7 @@
                     <label for="remember-me"> Remember me </label>
                 </div>
                 <div class="forgot">
-                    <a class="link" href="Reset-Password.html">Forgot Password?</a>
+                    <a class="link" href="/forgot-password">Forgot Password?</a>
                 </div>
             </div>
             <button type="submit" class="btn" name="login" id="login-btn">
