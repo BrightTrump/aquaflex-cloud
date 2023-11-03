@@ -35,7 +35,7 @@
       <i class="fas fa-long-arrow-alt-up"></i>
     </a>
     <!-- ==================== Scroll-Top Area (End) ==================== -->
-    
+
     {{ $slot }}
 
     <!-- Jquery -->

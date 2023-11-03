@@ -202,7 +202,7 @@
                 <p>
                   We are dedicated to prioritizing sustainability, resource
                   conservation, and reducing our carbon footprint in all aspects
-                  of our products and practices. <br />              
+                  of our products and practices. <br />
                 </p>
               </div>
             </li>
