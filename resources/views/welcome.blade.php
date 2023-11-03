@@ -17,7 +17,7 @@
                         <div class="text">
                             <h5>Welcome to Aquaflex</h5>
                             <h3>Bringing Water, Elevating Existence</h3>
-                            <a href="/shop/shop-grid.html" class="btn">Our Products</a>
+                            <a href="/shop-grid" class="btn">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <div class="text">
                             <h5>Welcome to Aquaflex</h5>
                             <h3>Deliver Pure Water Directly</h3>
-                            <a href="/shop/shop-grid.html" class="btn">Our Products</a>
+                            <a href="/shop-grid" class="btn">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="text">
                             <h5>Welcome to Aquaflex</h5>
                             <h3>Maintain Proper Hydration for Optimal Health</h3>
-                            <a href="/shop/shop-grid.html" class="btn">Our Products</a>
+                            <a href="/shop-grid" class="btn">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         </div>
                     </li>
                 </ul>
-                <a href="../contact.html" class="btn">Contact Us</a>
+                <a href="/contact" class="btn">Contact Us</a>
             </div>
         </div>
         <!-- <div class="box-container">
@@ -219,7 +219,7 @@
               </div>
             </li>
           </ul>
-          <a href="../contact.html" class="btn">Contact Us</a>
+          <a href="../contact" class="btn">Contact Us</a>
         </div>
         <div class="image">
           <div class="sub-image1">
@@ -286,7 +286,7 @@
                     <img src="/assets/images/Service-1.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="../services.html">
+                    <a href="/services">
                         <h3>Bottled Water</h3>
                     </a>
                     <p>
@@ -301,7 +301,7 @@
                     <img src="/assets/images/Service-2.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="../services.html">
+                    <a href="/services">
                         <h3>Water Dispenser</h3>
                     </a>
                     <p>
@@ -316,7 +316,7 @@
                     <img src="/assets/images/Service-3.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="../services.html">
+                    <a href="/services">
                         <h3>Water Softening</h3>
                     </a>
                     <p>
@@ -331,7 +331,7 @@
                     <img src="/assets/images/Process-5.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="../services.html">
+                    <a href="/services">
                         <h3>Filtration Plants</h3>
                     </a>
                     <p>
@@ -347,7 +347,7 @@
                     <img src="/assets/images/Service-5.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="../services.html">
+                    <a href="/services">
                         <h3>Water Testing</h3>
                     </a>
                     <p>
@@ -363,7 +363,7 @@
                     <img src="/assets/images/Product-6.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="../services.html">
+                    <a href="/services">
                         <h3>Water Refill</h3>
                     </a>
                     <p>
@@ -391,7 +391,7 @@
                     <img src="/assets/images/Product-1.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="/shop/product-single.html">
+                    <a href="/product-single">
                         <h3>Water Purifier</h3>
                     </a>
                     <div class="price">$40.00 <span>$50.00</span></div>
@@ -400,7 +400,7 @@
                         sediment filters, carbon filters, and reverse osmosis, to ensure
                         clean and safe drinking water by removing harmful contaminants.
                     </p>
-                    <a href="/shop/product-single.html" class="btn">Shop Now</a>
+                    <a href="/product-single" class="btn">Shop Now</a>
                 </div>
             </div>
 
@@ -409,7 +409,7 @@
                     <img src="/assets/images/Product-2.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="pages/Shop/Product-Single.html">
+                    <a href="/Product-Single">
                         <h3>Bottled Water</h3>
                     </a>
                     <div class="price">$40.00 <span>$50.00</span></div>
@@ -417,7 +417,7 @@
                         Thoughtfully packaged, securely sealed, easily accessible, and
                         readily accessible.
                     </p>
-                    <a href="/shop/product-single.html" class="btn">Shop Now</a>
+                    <a href="/product-single" class="btn">Shop Now</a>
                 </div>
             </div>
 
@@ -426,7 +426,7 @@
                     <img src="/assets/images/Product-3.png" alt="" />
                 </div>
                 <div class="content">
-                    <a href="/shop/product-single.html">
+                    <a href="/product-single">
                         <h3>Water Dispenser</h3>
                     </a>
                     <div class="price">$40.00 <span>$50.00</span></div>
@@ -434,7 +434,7 @@
                         It comes with an Incorporated integrated filtration mechanism to
                         guarantee the purity and safety of your drinking water.
                     </p>
-                    <a href="/shop/product-single.html" class="btn">Shop Now</a>
+                    <a href="/product-single" class="btn">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -444,7 +444,7 @@
                     <img src="/assets/images/blackcurrant (4).jpg" alt="" />
                 </div>
                 <div class="content">
-                    <a href="/shop/product-single.html">
+                    <a href="/product-single">
                         <h3>Blackcurrant (1 Litres)</h3>
                     </a>
                     <div class="price">$40.00 <span>$50.00</span></div>
@@ -454,7 +454,7 @@
                         ingredient in jams, jellies, and beverages. Boosting customer
                         health is our top goal.
                     </p>
-                    <a href="/shop/product-single.html" class="btn">Shop Now</a>
+                    <a href="/product-single" class="btn">Shop Now</a>
                 </div>
             </div>
 
@@ -463,7 +463,7 @@
                     <img src="/assets/images/blackcurrant (6).jpg" alt="" />
                 </div>
                 <div class="content">
-                    <a href="/shop/product-single.html">
+                    <a href="/product-single">
                         <h3>Blackcurrant (25 Litres)</h3>
                     </a>
                     <div class="price">$40.00 <span>$50.00</span></div>
@@ -473,7 +473,7 @@
                         ingredient in jams, jellies, and beverages. Boosting customer
                         health is our top goal.
                     </p>
-                    <a href="/shop/product-single.html" class="btn">Shop Now</a>
+                    <a href="/product-single" class="btn">Shop Now</a>
                 </div>
             </div>
 
@@ -482,7 +482,7 @@
                     <img src="/assets/images/blackcurrant (9).jpg" alt="" />
                 </div>
                 <div class="content">
-                    <a href="pages/Shop/Product-Single.html">
+                    <a href="/Product-Single">
                         <h3>Blackcurrant (35cl)</h3>
                     </a>
                     <div class="price">$40.00 <span>$50.00</span></div>
@@ -492,7 +492,7 @@
                         ingredient in jams, jellies, and beverages. Boosting customer
                         health is our top goal.
                     </p>
-                    <a href="/shop/product-single.html" class="btn">Shop Now</a>
+                    <a href="/product-single" class="btn">Shop Now</a>
                 </div>
             </div>
 
@@ -634,7 +634,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <a href="/About/team.html">
+                    <a href="/About/team">
                         <h2>Daddy Jumbo</h2>
                     </a>
                     <h5>Founder & CEO</h5>
@@ -652,7 +652,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <a href="/about/team.html">
+                    <a href="/about/team">
                         <h2>Amelia Taylor</h2>
                     </a>
                     <h5>Operations Manager</h5>
@@ -670,7 +670,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <a href="/about/team.html">
+                    <a href="/about/team">
                         <h2>David Wilson</h2>
                     </a>
                     <h5>Delivery Driver</h5>
@@ -688,7 +688,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <a href="/about/team.html">
+                    <a href="/about/team">
                         <h2>Elizabeth Scott</h2>
                     </a>
                     <h5>Marketing Manager</h5>

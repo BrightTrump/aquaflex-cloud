@@ -31,25 +31,25 @@
             </div>
             <div class="info links">
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Blackcurrant</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/shop-grid">Blackcurrant</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Bottled water</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/shop-grid">Bottled water</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Water dispenser</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/services">Water dispenser</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Water softening</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/services">Water softening</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Filtration plants</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/services">Filtration plants</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Water testing</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/services">Water testing</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../services.html">Water refill</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/services">Water refill</a>
                 </p>
             </div>
         </div>
@@ -67,16 +67,16 @@
                     <i class="fa-solid fa-caret-right"></i><a href="/services">Services</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="/project">Projects</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/team">team</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="/shop/shop-grid.html">Shop</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/shop-grid">Shop</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="#">Blogs</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/faq">Faqs</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-caret-right"></i><a href="../contact.html">Contact</a>
+                    <i class="fa-solid fa-caret-right"></i><a href="/contact">Contact</a>
                 </p>
             </div>
         </div>

@@ -19,13 +19,32 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/about', function () {
     return view('about');
 });
-
-Route::get('/team', function() {
+Route::get('/team', function () {
     return view('team');
+});
+Route::get('/faq', function () {
+    return view('faq');
+});
+Route::get('/services', function () {
+    return view('services');
+});
+Route::get('/shop-grid', function () {
+    return view('shop-grid');
+});
+Route::get('/cart', function () {
+    return view('cart');
+});
+Route::get('/product-single', function () {
+    return view('product-single');
+});
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 

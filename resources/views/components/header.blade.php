@@ -30,18 +30,18 @@
                         </div>
                     </div>
 
-                    <a href="../services.html" class="nav-btn">Services</a>
-                    <!-- <a href="../project.html" class="nav-btn">Projects</a> -->
+                    <a href="/services" class="nav-btn">Services</a>
+                    <!-- <a href="/project" class="nav-btn">Projects</a> -->
 
                     <div class="dropdown-menu">
                         <button class="nav-btn">
                             shop <i class="fas fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="/shop/shop-grid.html">Store</a>
-                            <!-- <a href="/shop/product-single.html">product Single</a> -->
-                            <a href="/shop/cart.html">cart</a>
-                            <!-- <a href="/shop/checkout.html">checkout</a> -->
+                            <a href="/shop-grid">Store</a>
+                            <!-- <a href="/product-single">product Single</a> -->
+                            <a href="/cart">Cart</a>
+                            <!-- <a href="/checkout">Checkout</a> -->
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
                   blog <i class="fas fa-angle-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="/blog/blog-grid.html">blogs grid</a>
+                  <a href="/blog-grid">blogs grid</a>
                   <a href="#">blog Single</a>
                 </div>
               </div> -->
@@ -60,13 +60,13 @@
                             Logins <i class="fas fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="/logins/Login.html">login</a>
-                            <!-- <a href="/logins/Register.html">register</a>
-                  <a href="/logins/Reset-Password.html">forgot Password</a> -->
+                            <a href="/login">login</a>
+                            <!-- <a href="/register">register</a>
+                  <a href="/reset-password">forgot Password</a> -->
                         </div>
                     </div>
 
-                    <a class="nav-btn" href="../contact.html">contact</a>
+                    <a class="nav-btn" href="/contact">contact</a>
                 </nav>
 
                 <!-- == Icon Container == -->
@@ -112,7 +112,7 @@
 
                     <!-- <div class="nav-link">
                 <div class="main-nav-link">
-                  <a href="../project.html" class="nav-btn">Projects</a>
+                  <a href="/project" class="nav-btn">Projects</a>
                 </div>
               </div> -->
 
@@ -122,10 +122,10 @@
                             <i class="fas fa-plus"></i>
                         </div>
                         <div class="sub-nav-link">
-                            <a href="/shop/shop-grid.html">Store</a>
-                            <!-- <a href="/shop/product-single.html">product Single</a> -->
-                            <a href="/shop/cart.html">Cart</a>
-                            <!-- <a href="/shop/checkout.html">checkout</a> -->
+                            <a href="/shop-grid">Store</a>
+                            <!-- <a href="/product-single">product Single</a> -->
+                            <a href="/cart">Cart</a>
+                            <!-- <a href="/checkout">checkout</a> -->
                         </div>
                     </div>
 
@@ -135,7 +135,7 @@
                   <i class="fas fa-plus"></i>
                 </div>
                 <div class="sub-nav-link">
-                  <a href="/blog/blog-grid.html">blogs grid</a>
+                  <a href="/blog-grid">blogs grid</a>
                   <a href="#">blog Single</a>
                 </div>
               </div> -->
@@ -146,15 +146,15 @@
                             <i class="fas fa-plus"></i>
                         </div>
                         <div class="sub-nav-link">
-                            <a href="/logins/Login.html">login</a>
-                            <!-- <a href="/logins/Register.html">register</a>
-                  <a href="/logins/Reset-Password.html">forgot Password</a> -->
+                            <a href="/login">login</a>
+                            <!-- <a href="/register">Register</a>
+                  <a href="/reset-password">Forgot Password</a> -->
                         </div>
                     </div>
 
                     <div class="nav-link">
                         <div class="main-nav-link">
-                            <a class="nav-btn" href="../contact.html">contact</a>
+                            <a class="nav-btn" href="/contact.html">contact</a>
                         </div>
                     </div>
                 </nav>
