@@ -21,7 +21,7 @@
         <div class="heading">
             <span>What We Offer</span>
             <h2>Our Services</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">

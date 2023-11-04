@@ -2,7 +2,7 @@
     @include('components.header')
 
     <!-- ==================== Page-Title (Start) ==================== -->
-    <div class="page-title">
+    {{-- <div class="page-title">
         <div class="container">
             <div class="title">
                 <h2>Shop Grid</h2>
@@ -14,13 +14,13 @@
                 <span class="page">Shop Grid</span>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- ==================== Page-Title (End) ==================== -->
 
     <!-- ==================== Shop-Grid Area (Start) ==================== -->
     <section class="shop">
         <!-- ========== Shop Sidebar Area (Start) ========== -->
-        <div class="sidebar">
+        {{-- <div class="sidebar">
             <div class="category sidebar-item">
                 <div class="sidebar-heading">
                     <h2>Categories</h2>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <!-- Popular-Products Area (End) -->
-        </div>
+        </div> --}}
         <!-- ========== Shop Sidebar Area (End) ========== -->
 
         <!-- ========== Shop Container (Start) ========== -->

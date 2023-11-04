@@ -32,7 +32,7 @@
 <body>
     <!-- ==================== Scroll-Top Area (Start) ==================== -->
     <a href="#" class="scroll-top">
-      <i class="fas fa-long-arrow-alt-up"></i>
+        <i class="fas fa-long-arrow-alt-up"></i>
     </a>
     <!-- ==================== Scroll-Top Area (End) ==================== -->
 
@@ -55,6 +55,7 @@
     <script src="/assets/js/projects.js"></script>
     <script src="/assets/js/testi-slider.js"></script>
     <script src="/assets/js/sponsor-slider.js"></script>
+    <script src="/assets/js/add-to-cart.js"></script>
 </body>
 
 </html>

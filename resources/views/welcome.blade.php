@@ -141,7 +141,7 @@
                 <div class="heading">
                     <span>About Us</span>
                     <h3>Improved Water, Enhanced Living, Delivered.</h3>
-                    <img src="/assets/images/Heading/Heading.png" alt="" />
+                    <img src="/assets/images/Heading.png" alt="" />
                 </div>
                 <p>
                     From the heights of the Ivory mountains comes AquaFlex. A pure and
@@ -184,7 +184,7 @@
           <div class="heading">
             <span>About Us</span>
             <h3>Improved Blackcurrant, Enhanced Living, Delivered.</h3>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
           </div>
           <p>
             Our blackcurrants are petite, deep purple berries renowned for their
@@ -277,7 +277,7 @@
         <div class="heading">
             <span>What We Offer</span>
             <h2>Our Services</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">
@@ -382,7 +382,7 @@
         <div class="heading">
             <span>Featured Products</span>
             <h2>Our Products</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">
@@ -506,7 +506,7 @@
         <div class="heading">
             <span>Mineral Water</span>
             <h2>Water Composition</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">
@@ -562,7 +562,7 @@
       <div class="heading">
         <span>Select Your Subscription</span>
         <h2>Pricing Structure</h2>
-        <img src="/assets/images/Heading/Heading.png" alt="" />
+        <img src="/assets/images/Heading.png" alt="" />
       </div>
 
       <div class="box-container">
@@ -619,7 +619,7 @@
         <div class="heading">
             <span>Get Acquainted With Our Team"</span>
             <h2>Our Team</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">
@@ -703,7 +703,7 @@
         <div class="heading">
             <span>What Our Client's Say</span>
             <h2>Customer Reviews and Feedback</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="swiper-container testimonial-slider">
@@ -807,7 +807,7 @@
         <div class="heading">
             <span>Recent News & Blogs</span>
             <h2>Our Blogs</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">
@@ -870,13 +870,14 @@
         <div class="heading">
             <span>Our Amazing Partners</span>
             <h2>Our Partners</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="swiper-container partner-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide partner-item">
                     <img src="/assets/images/Sponsor-1.png" alt="" />
+                    <p>BrightTrump Technologies</p>
                 </div>
                 <div class="swiper-slide partner-item">
                     <img src="/assets/images/Sponsor-2.png" alt="" />
@@ -889,6 +890,7 @@
                 </div>
                 <div class="swiper-slide partner-item">
                     <img src="/assets/images/Sponsor-5.png" alt="" />
+                    <p>BrightTrump Technologies</p>
                 </div>
                 <div class="swiper-slide partner-item">
                     <img src="/assets/images/Sponsor-6.png" alt="" />

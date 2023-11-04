@@ -27,7 +27,7 @@
         <div class="footer-item">
             <div class="footer-heading">
                 <h2>Our Services</h2>
-                <img src="/assets/images/Heading/Heading.png" alt="" />
+                <img src="/assets/images/Heading.png" alt="" />
             </div>
             <div class="info links">
                 <p>
@@ -57,7 +57,7 @@
         <div class="footer-item">
             <div class="footer-heading">
                 <h2>Company</h2>
-                <img src="/assets/images/Heading/Heading.png" alt="" />
+                <img src="/assets/images/Heading.png" alt="" />
             </div>
             <div class="info links">
                 <p>
@@ -84,7 +84,7 @@
         <div class="footer-item">
             <div class="footer-heading">
                 <h2>Contact Info</h2>
-                <img src="images/Heading/Heading.png" alt="" />
+                <img src="/assets/images/Heading.png" alt="" />
             </div>
             <div class="info connect">
                 <p><i class="fas fa-phone"></i><span>+234-803-675-5492</span></p>
