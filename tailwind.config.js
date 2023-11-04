@@ -18,6 +18,7 @@ export default {
                 primary: '#00ccff',
                 secondary: '#ecc94b',
                 'gray-350': '#C6C6C7',
+                'sky-150':'#EBF0FF'
                 // ...
             }
         },
