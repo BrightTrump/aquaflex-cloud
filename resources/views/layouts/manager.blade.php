@@ -41,13 +41,13 @@
     </div>
 
     @vite([
-        'resources/shopo/js/jquery.min.js', 
-        'resources/shopo/js/jquery-migrate.js', 'resources/shopo/js/jquery-ui.min.js', 'resources/shopo/js/popper.min.js', 
-        'resources/shopo/js/bootstrap.min.js', 'resources/shopo/js/charts.js', 
-        'resources/shopojs/jquery-jvectormap.js', 'resources/shopo/js/jvector-map.js', 
+        'resources/shopo/js/jquery.min.js',
+        'resources/shopo/js/jquery-migrate.js', 'resources/shopo/js/jquery-ui.min.js', 'resources/shopo/js/popper.min.js',
+        'resources/shopo/js/bootstrap.min.js', 'resources/shopo/js/charts.js',
+        'resources/shopojs/jquery-jvectormap.js', 'resources/shopo/js/jvector-map.js',
         'resources/shopo/js/slickslider.min.js', 'resources/shopo/js/main.js',
         ])
-    
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderFromStoreController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -47,8 +48,8 @@ Route::get('/checkout', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-
-
+Route::get('/admin', function () {
+ return view('admin'); });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -68,6 +69,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('/product/add', [ProductController::class, 'store'])->name('product.add');
 });
 
+// Shop from store
+Route::middleware(['auth', 'isAdminOrSaleManager'])->group(function () {
+    Route::get('/store/order', [OrderFromStoreController::class, 'index']);
+});
+
 
 require __DIR__ . '/auth.php';
-require __DIR__ . '/admin_access.php';
