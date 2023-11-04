@@ -27,8 +27,8 @@ Route::get('/about', function () {
 Route::get('/team', function () {
     return view('team');
 });
-Route::get('/faq', function () {
-    return view('faq');
+Route::get('/faqs', function () {
+    return view('faqs');
 });
 Route::get('/services', function () {
     return view('services');

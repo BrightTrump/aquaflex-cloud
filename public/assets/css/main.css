@@ -505,7 +505,19 @@ section {
     padding: 0.5rem;
     cursor: pointer;
 }
+.header .icon-container .icon span {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    top: -1em;
+    left: -0.5em;
+}
 
+.header .icon-container .icon span:hover {
+    color: var(--main-color);
+}
 .header .icon-container .icon:hover {
     color: var(--main-color);
 }
@@ -575,9 +587,9 @@ section {
 /*----- 6- Footer Area CSS -----*/
 .footer {
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-        url("../images/Background/Footer.png");
+        url("/assets/images/Footer.png");
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-        url("../images/Background/Footer.png");
+        url("/assets/images/Footer.png");
     background-position: center;
     background-size: cover;
     padding-top: 5em;
@@ -1300,9 +1312,9 @@ input:-webkit-autofill:active {
             rgba(0, 44, 143, 0.9),
             rgba(0, 44, 143, 0.9)
         ),
-        za XS url("../images/Background/Counter.png");
+        za XS url("/assets/images/Counter.png");
     background: linear-gradient(rgba(0, 44, 143, 0.9), rgba(0, 44, 143, 0.9)),
-        url("../images/Background/Counter.png");
+        url("/assets/images/Counter.png");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -1350,9 +1362,9 @@ input:-webkit-autofill:active {
             rgba(0, 44, 143, 0.9),
             rgba(0, 44, 143, 0.9)
         ),
-        url("../images/Background/Composition.png");
+        url("/assets/images/Composition.png");
     background: linear-gradient(rgba(0, 44, 143, 0.9), rgba(0, 44, 143, 0.9)),
-        url("../images/Background/Composition.png");
+        url("/assets/images/Composition.png");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -1872,9 +1884,9 @@ input:-webkit-autofill:active {
             rgba(0, 44, 143, 0.9),
             rgba(0, 44, 143, 0.9)
         ),
-        url("../images/Background/Testimonials.png");
+        url("/assets/images/Testimonials.png");
     background: linear-gradient(rgba(0, 44, 143, 0.9), rgba(0, 44, 143, 0.9)),
-        url("../images/Background/Testimonials.png");
+        url("/assets/images/Testimonials.png");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -3739,6 +3751,9 @@ input[type="range"]::-moz-range-thumb {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
+}
+.related-items .box-container .content h3 {
+    text-transform: capitalize;
 }
 
 /*----- 4- Carts  ------*/

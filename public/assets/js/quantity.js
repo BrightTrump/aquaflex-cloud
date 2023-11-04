@@ -22,3 +22,24 @@ String.prototype.getDecimals || (String.prototype.getDecimals = function() {
         e = a.attr("step");
     b && "" !== b && "NaN" !== b || (b = 0), "" !== c && "NaN" !== c || (c = ""), "" !== d && "NaN" !== d || (d = 0), "any" !== e && "" !== e && void 0 !== e && "NaN" !== parseFloat(e) || (e = 1), jQuery(this).is(".plus") ? c && b >= c ? a.val(c) : a.val((b + parseFloat(e)).toFixed(e.getDecimals())) : d && b <= d ? a.val(d) : b > 0 && a.val((b - parseFloat(e)).toFixed(e.getDecimals())), a.trigger("change")
 });
+
+//Get the input element
+// const quantityInput = document.getElementById("quantity");
+
+// //Get the plus and minus button
+// const plusButton = document.querySelector(".plus");
+// const minusButton = document.querySelector(".minus");
+
+// //Add event listener to the plus button
+// plusButton.addEventListener("click", () => {
+//     quantityInput.value = parseInt(quantityInput.value) + 1;
+// });
+// //Add event listener to the minus button
+// minusButton.addEventListener("click", () => {
+//     if (parseInt(quantityInput.value > 1)) {
+//         quantityInput.value = parseInt(quantityInput.value) - 1;
+//     }
+// });
+
+
+

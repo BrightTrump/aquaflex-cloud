@@ -70,10 +70,11 @@
                 </nav>
 
                 <!-- == Icon Container == -->
-                <div class="icon-container">
+                <div class="icon-container" id="cartIcon">
                     <div id="search" class="icon fa-solid fa-magnifying-glass"></div>
-                    <a href="/logins/Login.html" id="login" class="icon fas fa-user"></a>
-                    <a href="/shop/cart.html" id="cart" class="icon fas fa-shopping-cart"></a>
+                    <a href="/login" id="login" class="icon fas fa-user"></a>
+                    <a href="/cart" id="cart" class="icon fas fa-shopping-cart"><span
+                            class="cart-count">0</span></a>
                 </div>
             </div>
 

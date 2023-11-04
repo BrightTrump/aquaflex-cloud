@@ -59,13 +59,15 @@
                                 <div class="qty">
                                     <div class="quantity buttons_added">
                                         <input type="button" value="-" class="minus" />
-                                        <input type="number" step="1" min="1" max="100"
-                                            name="quantity" value="1" title="Qty" class="input-text qty text" />
+                                        <input type="number" step="1" min="1" max="150"
+                                            name="quantity" id="quantity" value="1" title="Qty"
+                                            class="input-text qty text" />
                                         <input type="button" value="+" class="plus" />
                                     </div>
                                 </div>
 
-                                <a href="/shop/cart.html" class="btn">Add to Cart</a>
+                                <button class="btn" id="addToCartButton">Add to Cart</button>
+
                             </div>
                         </div>
 
@@ -208,7 +210,7 @@
                         <img src="/assets/images/blackcurrant (9).jpg" alt="" />
                     </div>
                     <div class="content">
-                        <a href="product-single-2.html">
+                        <a href="/product-single">
                             <h3>Blackcurrant 35cl</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
@@ -217,7 +219,7 @@
                             abundant vitamin C, antioxidants, and play a crucial role in
                             enhancing customer health.
                         </p>
-                        <a href="" class="btn">Add to Cart</a>
+                        <button class="btn" id="addToCartButton">Add to Cart</button>
                     </div>
                 </div>
 
@@ -226,7 +228,7 @@
                         <img src="/assets/images/blackcurrant (6).jpg" alt="" />
                     </div>
                     <div class="content">
-                        <a href="product-single-6.html">
+                        <a href="/product-single">
                             <h3>Blackcurrant 25Litres</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
@@ -235,7 +237,7 @@
                             abundant vitamin C, antioxidants, and play a crucial role in
                             enhancing customer health.
                         </p>
-                        <a href="" class="btn">Add to Cart</a>
+                        <button class="btn" id="addToCartButton">Add to Cart</button>
                     </div>
                 </div>
 
@@ -244,7 +246,7 @@
                         <img src="/assets/images/blackcurrant (2).jpg" alt="" />
                     </div>
                     <div class="content">
-                        <a href="product-single-5.html">
+                        <a href="/product-single">
                             <h3>Blackcurrant 3Litres</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
@@ -253,7 +255,7 @@
                             abundant vitamin C, antioxidants, and play a crucial role in
                             enhancing customer health.
                         </p>
-                        <a href="" class="btn">Add to Cart</a>
+                        <button class="btn" id="addToCartButton">Add to Cart</button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-        @include('components.header')
+    @include('components.header')
 
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">
@@ -22,7 +22,7 @@
         <div class="heading">
             <span>Get Acquainted With Our Team"</span>
             <h2>Our Team</h2>
-            <img src="/assets/images/Heading/Heading.png" alt="" />
+            <img src="/assets/images/Heading.png" alt="" />
         </div>
 
         <div class="box-container">
