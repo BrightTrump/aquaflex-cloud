@@ -198,10 +198,10 @@
                             <h3>Bottled Water</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
-                        <p>
+                        {{-- <p>
                             Thoughtfully packaged, securely sealed, easily accessible, and
                             readily accessible.
-                        </p>
+                        </p> --}}
                         <a href="/product-single" class="btn">Shop Now</a>
                     </div>
                 </div>
@@ -215,12 +215,12 @@
                             <h3>Blackcurrant (30cl)</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
-                        <p>
+                        {{-- <p>
                             Our small, vibrant blackcurrants, bursting with vitamin C and
                             antioxidants, are a vital ingredient in jams, jellies, and
                             beverages, contributing to our top priority of enhancing
                             customer well-being.
-                        </p>
+                        </p> --}}
                         <a href="/product-single" class="btn">Shop Now</a>
                     </div>
                 </div>
@@ -234,13 +234,13 @@
                             <h3>Blackcurrant (50cl)</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
-                        <p>
+                        {{-- <p>
                             We're proud of our intensely dark purple blackcurrants, known
                             for their vibrant, tangy taste, rich in vitamin C and
                             antioxidants. These powerhouses are essential for making jams,
                             jellies, and beverages, all aimed at improving our customers'
                             well-being.
-                        </p>
+                        </p> --}}
                         <a href="/product-single" class="btn">Shop Now</a>
                     </div>
                 </div>
@@ -254,12 +254,12 @@
                             <h3>Blackcurrant (1 Litres)</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
-                        <p>
+                        {{-- <p>
                             Our petite, deep purple blackcurrants are known for their zesty,
                             tangy flavor, rich in vitamin C and antioxidants. They're a key
                             ingredient in jams, jellies, and beverages. Boosting customer
                             health is our top goal.
-                        </p>
+                        </p> --}}
                         <a href="/product-single" class="btn">Shop Now</a>
                     </div>
                 </div>
@@ -273,12 +273,12 @@
                             <h3>Blackcurrant (3 Litres)</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
-                        <p>
+                        {{-- <p>
                             Our vibrant, petite blackcurrants, packed with vitamin C and
                             antioxidants, are essential in crafting jams, jellies, and
                             beverages. This aligns seamlessly with our core mission of
                             promoting customer well-being and health.
-                        </p>
+                        </p> --}}
                         <a href="/product-single" class="btn">Shop Now</a>
                     </div>
                 </div>
@@ -291,13 +291,12 @@
                             <h3>Blackcurrant (25 Litres)</h3>
                         </a>
                         <div class="price">$40.00 <span>$50.00</span></div>
-                        <p>
+                        {{-- <p>
                             Our petite, lively blackcurrants, brimming with vitamin C and
                             antioxidants, play a crucial role in the creation of jams,
                             jellies, and beverages, aligning perfectly with our primary
                             focus on elevating customer health and wellness.
-                        </p>
-
+                        </p> --}}
                         <a href="/product-single" class="btn">Shop Now</a>
                     </div>
                 </div>

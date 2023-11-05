@@ -24,9 +24,12 @@
     <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <link rel="stylesheet" href="/assets/css/custom.css" />
+    @vite([
+        'public/assets/css/main.css', 
+        'public/assets/css/responsive.css', 
+        'public/assets/assets/css/custom.css',
+        'resources/css/app.css'
+        ])
 </head>
 
 <body>

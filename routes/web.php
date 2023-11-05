@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\OrderFromStoreController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,11 +62,11 @@ Route::middleware('auth')->group(function () {
 });
 
 // Product Route
-Route::resource('products', ProductController::class)->only(['index', 'single']);
+Route::get('products', [ProductsController::class, 'index']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/product/add', [ProductController::class, 'create']);
-    Route::post('/product/add', [ProductController::class, 'store'])->name('product.add');
+    Route::get('/product/add', [ProductsController::class, 'create']);
+    Route::post('/product/add', [ProductsController::class, 'store'])->name('product.add');
 });
 
 // Shop from store
