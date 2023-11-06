@@ -2,14 +2,42 @@
 <header>
     <!-- ===== Header Area (Start) ===== -->
 
-    <div class="justify-between flex items-center py-3 px-16 h-[59px]">
+    <div class="justify-between flex items-center py-3 px-16 h-[59px] border-b border-gray-150">
         <a href="/" class="" aria-label="go to homepage" aria-current="page">
             <div class="dng-logotype">
                 <img src="/assets/images/Logo/aquaflex-black.png" alt="Logo" class="w-[12rem]">
             </div>
         </a>
 
-        <ul class="flex items-center">
+        <nav class="flex text-[16px] font-medium gap-10">
+            <div>
+                <a class="" href="/">Home</a>
+            </div>
+
+            <div class="">
+                <button class="">
+                    About<i class="fas fa-angle-down"></i>
+                </button>
+                {{-- <div class="dropdown-content">
+                            <a href="/about">About Us</a>
+                            <a href="/team">team</a>
+                            <a href="/faqs">faqs</a>
+                        </div> --}}
+            </div>
+            <div>
+                <a href="/services" class="">Services</a>
+            </div>
+
+            <div>
+                <a class="" href="/contact">Contact Us</a>
+            </div>
+            <div>
+                <a href="/products">Shop Now</a>
+            </div>
+
+        </nav>
+
+        <ul class="flex items-center text-[16px] gap-5 font-medium">
             <li class="account-nav-item position-relative flex-col-align-center mr-4">
                 <div class="cursor-pointer flex items-center gap-2">
                     <span>
@@ -20,37 +48,39 @@
                                 stroke="#171725" stroke-width="2" stroke-linecap="round"></path>
                         </svg>
                     </span>
-                    <span class="text-[15px] text-black font-medium">Account</span>
+                    <span class="">Account</span>
                 </div>
-                {{-- <div class="acc-nav-popup pt-3">
-                        <div class="dng-bg-white dng-rounded dng-border-gray-300 p-4" style="min-width: 170px;">
-                            <ul>
-                                <li class="dng-link mb-3">
-                                    Login
-                                </li>
-                                <li class="dng-link"><strong>Signup</strong></li>
-                            </ul>
-                        </div>
-                    </div> --}}
             </li>
             <li>
-                <div role="button" aria-label="view basket" class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none"
-                        class="dng-icon" viewBox="0 0 20 17">
-                        <path d="M1.3353 6.63135L18.6647 6.63135L15.9178 15.9999H4.08223L1.3353 6.63135Z"
-                            stroke="#171725" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                        <path d="M4.34375 6.57904L7.07102 1M15.6569 6.57904L12.9297 1" stroke="#171725" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                    <span class="text-[15px] text-black font-medium">
-                        0 items
-                    </span>
-                </div>
+                <a href="/cart" role="button" aria-label="view basket" class="flex items-center gap-4">
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                            viewBox="0,0,256,256">
+                            <g transform="translate(-38.4,-38.4) scale(1.3,1.3)">
+                                <g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(8,8)">
+                                        <path
+                                            d="M5,7c-0.55078,0 -1,0.44922 -1,1c0,0.55078 0.44922,1 1,1h2.21875l2.625,10.5c0.22266,0.89063 1.01953,1.5 1.9375,1.5h11.46875c0.90234,0 1.66797,-0.59766 1.90625,-1.46875l2.59375,-9.53125h-16.75l0.5,2h13.65625l-1.90625,7h-11.46875l-2.625,-10.5c-0.22266,-0.89062 -1.01953,-1.5 -1.9375,-1.5zM22,21c-1.64453,0 -3,1.35547 -3,3c0,1.64453 1.35547,3 3,3c1.64453,0 3,-1.35547 3,-3c0,-1.64453 -1.35547,-3 -3,-3zM13,21c-1.64453,0 -3,1.35547 -3,3c0,1.64453 1.35547,3 3,3c1.64453,0 3,-1.35547 3,-3c0,-1.64453 -1.35547,-3 -3,-3zM13,23c0.5625,0 1,0.4375 1,1c0,0.5625 -0.4375,1 -1,1c-0.5625,0 -1,-0.4375 -1,-1c0,-0.5625 0.4375,-1 1,-1zM22,23c0.5625,0 1,0.4375 1,1c0,0.5625 -0.4375,1 -1,1c-0.5625,0 -1,-0.4375 -1,-1c0,-0.5625 0.4375,-1 1,-1z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        @if (session('cart'))
+                            <span
+                                class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
+                                {{ count((array) session('cart')) }}
+                            </span>
+                        @endif
+                    </div>
+                    Cart
+                </a>
             </li>
         </ul>
     </div>
-    <div class="h-[47px] bg-[#fafafb] border border-t-[#e9ecee]"></div>
 
     {{-- <div class="header">
         <div class="header-2">

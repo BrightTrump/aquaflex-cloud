@@ -1,3 +1,5 @@
+@props(['title'])
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -6,13 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Title -->
-    <title>AquaFlex | Water & Blackcurrant Delivery Company</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>{{ config('app.name', 'Laravel') }} | {{$title}}</title>
 
     <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
@@ -25,14 +22,17 @@
 
     <!-- Custom Stylesheets -->
     @vite([
-        'public/assets/css/main.css', 
-        'public/assets/css/responsive.css', 
+        'public/assets/css/main.css',
+        'public/assets/css/responsive.css',
         'public/assets/assets/css/custom.css',
-        'resources/css/app.css'
+        'resources/css/app.css',
+        'public/assets/webfont/css/general-sans.css'
         ])
 </head>
 
 <body>
+
+
     <!-- ==================== Scroll-Top Area (Start) ==================== -->
     <a href="#" class="scroll-top">
         <i class="fas fa-long-arrow-alt-up"></i>
@@ -40,6 +40,8 @@
     <!-- ==================== Scroll-Top Area (End) ==================== -->
 
     {{ $slot }}
+
+    @yield('script')
 
     <!-- Jquery -->
     <script src="/vendors/jquery/jquery-3.6.0.js"></script>

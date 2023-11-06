@@ -88,6 +88,7 @@
                                             </svg>
                                             <span class="sherah-header__count sherah-color1__bg">4</span>
 
+                                            {{-- Dropdowm Notification Card --}}
                                             <div class="sherah-dropdown-card sherah-dropdown-card__alarm sherah-border">
                                                 <svg class="sherah-dropdown-arrow" xmlns="http://www.w3.org/2000/svg"
                                                     width="43.488" height="22.207" viewBox="0 0 43.488 22.207">

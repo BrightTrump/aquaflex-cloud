@@ -16,10 +16,17 @@ export default {
             },
             colors: {
                 primary: '#00ccff',
-                secondary: '#ecc94b',
+                secondary: '#002c8f',
                 'gray-350': '#C6C6C7',
+                'gray-150': '#e9ecee',
                 'sky-150':'#EBF0FF'
                 // ...
+            },
+            screens: {
+                xs: "280px",
+                xm: "570px",
+                lx: "912px",
+                xml: "420px",
             }
         },
     },
