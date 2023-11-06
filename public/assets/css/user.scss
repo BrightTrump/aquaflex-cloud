@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&amp;display=swap");
+@import url("custom.css");
+
+:root {
+    --main-color: #24b5fc;
+    --secondary-color: #002c8f;
+    --black: #000;
+    --white: #fff;
+    --grey: #666;
+    --border-radius: 0.5rem;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    border: none;
+    outline: none;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+//User dashboard
+.container {
+    padding: 4em 2em 2em 2em;
+    .desc-p {
+        font-size: 1em;
+        padding-bottom: 0.4em;
+    }
+    .dash-h3 {
+        font-size: 1.3em;
+        font-weight: bold;
+        padding-bottom: 1em;
+    }
+    .card-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -moz-flexbox;
+        display: -o-flexbox;
+        display: flex;
+        gap: 2em;
+        width: 100%;
+        padding-bottom: 2em;
+        .card-content {
+            background-color: black;
+            width: 30%;
+            padding: 1em;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -moz-flexbox;
+            display: -o-flexbox;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            .svg-container {
+                .svg-icon {
+                    font-size: 1em;
+                }
+            }
+            .order-container {
+                .order {
+                    color: var(--white);
+                    font-size: 1.3em;
+                    padding-bottom: 1em;
+                }
+                .order-value {
+                    color: var(--white);
+                    font-size: 2.5em;
+                    font-weight: bold;
+                }
+            }
+            &:hover {
+                background-color: #45acdf;
+                font-style: var(--black);
+                font-style: var(--black);
+            }
+        }
+    }
+    .parent {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -moz-flexbox;
+        display: -o-flexbox;
+        display: flex;
+        width: 100%;
+        .sub-parent {
+            background-color: #bdd1db;
+            width: 48.5%;
+            padding: 2em 1em 2em 2em;
+            .personal {
+                color: #000;
+                font-size: 1.3em;
+                font-weight: bold;
+                padding-bottom: 1em;
+            }
+            .info-parent {
+                .info-content {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: -moz-flexbox;
+                    display: -o-flexbox;
+                    display: flex;
+                    gap: 2em;
+                    .title {
+                        font-size: 1.2em;
+                        width: 5vw;
+                        padding-bottom: 1em;
+                    }
+                    .title-desc {
+                        font-size: 1.2em;
+                        color: #302f2f;
+                    }
+                }
+            }
+        }
+    }
+}
+//Profile
+.main-container {
+    width: 100%;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    gap: 1.5em;
+    padding: 3em 1em 2em 2em;
+    .profil {
+        width: 66%;
+        .form-content {
+            width: 66%;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -moz-flexbox;
+            display: -o-flexbox;
+            flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -o-justify-content: space-between;
+            div {
+                padding-bottom: 1em;
+                label {
+                    font-size: 0.9em;
+                }
+                input {
+                    padding: 0.8em;
+                    width: 20vw;
+                    border: 1px solid rgb(161, 157, 157);
+                    border-radius: 0.5em;
+                }
+            }
+        }
+        .address-div {
+            padding-bottom: 1em;
+            .address-label {
+                font-size: 0.9em;
+            }
+            .address-input {
+                width: 41.8vw;
+                padding: 0.8em;
+                border: 1px solid rgb(161, 157, 157);
+                border-radius: 0.5em;
+                margin-bottom: 2em;
+            }
+        }
+        .btn-div {
+            width: 40%;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -moz-flexbox;
+            display: -o-flexbox;
+            gap: 1.5em;
+            .cancel-btn {
+                background-color: rgb(203, 220, 220);
+                color: red;
+                font-size: 1.3em;
+                border-radius: 0.5em;
+                padding: 0.2em 0.7em;
+                &:hover {
+                    background-color: rgb(228, 237, 237);
+                    color: black;
+                }
+            }
+            .update-cta {
+                background-color: black;
+                // background-color:  #24b5fc;
+                color: white;
+                font-size: 1.3em;
+                border-radius: 0.5em;
+                padding: 0.6em 1em;
+                &:hover {
+                    background-color: rgb(10, 236, 236);
+                    color: var(--black);
+                }
+            }
+        }
+    }
+    .pic-container {
+        width: 30%;
+        .pic-content {
+            border: 1px solid rgb(234, 230, 230);
+            padding: 1em;
+            .pic-heading {
+                font-size: 1.2em;
+                padding-bottom: .8em;
+            }
+            .pic-info {
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
