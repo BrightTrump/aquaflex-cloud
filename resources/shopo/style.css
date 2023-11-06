@@ -685,6 +685,7 @@
 .sherah-dropdown-card-name a:hover {
 	color: #6176FE;
 }
+
 /* Notification Hover */
 .sherah-header__dropmenu:hover .sherah-dropdown-card {
 	opacity: 1;

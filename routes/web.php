@@ -36,9 +36,6 @@ Route::get('/services', function () {
 Route::get('/shop-grid', function () {
     return view('shop-grid');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
 Route::get('/product-single', function () {
     return view('product-single');
 });
@@ -61,8 +58,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Product Route
-Route::get('products', [ProductsController::class, 'index']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/product/add', [ProductsController::class, 'create']);
@@ -76,3 +71,4 @@ Route::middleware(['auth', 'isAdminOrSaleManager'])->group(function () {
 
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/custom/product.php';

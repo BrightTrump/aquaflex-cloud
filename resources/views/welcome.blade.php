@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout :title="'Water & Blackcurrant Delivery Company'">
     <!-- ==================== Scroll-Top Area (Start) ==================== -->
     <a href="#" class="scroll-top">
         <i class="fas fa-long-arrow-alt-up"></i>
