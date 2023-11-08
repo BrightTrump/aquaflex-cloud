@@ -64,5 +64,4 @@
     </section>
 
     @include('components.footer')
-    @vite(['resources/js/product.js'])
 </x-guest-layout>

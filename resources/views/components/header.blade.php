@@ -9,32 +9,20 @@
             </div>
         </a>
 
-        <nav class="flex text-[16px] font-medium gap-10">
-            <div>
-                <a class="" href="/">Home</a>
-            </div>
-
-            <div class="">
-                <button class="">
-                    About<i class="fas fa-angle-down"></i>
-                </button>
-                {{-- <div class="dropdown-content">
-                            <a href="/about">About Us</a>
-                            <a href="/team">team</a>
-                            <a href="/faqs">faqs</a>
-                        </div> --}}
-            </div>
-            <div>
-                <a href="/services" class="">Services</a>
-            </div>
-
-            <div>
-                <a class="" href="/contact">Contact Us</a>
-            </div>
-            <div>
-                <a href="/products">Shop Now</a>
-            </div>
-
+        <nav class="dropdownmenu">
+            <ul class="flex text-[16px] font-medium w-full h-full items-center">
+                <li><a href="">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">About<i class="fas fa-angle-down ml-3"></i></a>
+                    <ul id="submenu" class="w-[14rem] border-l-4 border-primary">
+                        <li><a href="/about">About Us</a></li>
+                        <li> <a href="/team">Team</a></li>
+                        <li><a href="/faqs">FAQs</a></li>
+                    </ul>
+                </li>
+                <li><a class="" href="/contact">Contact Us</a></li>
+                <li><a href="/products">Shop Now</a></li>
+            </ul>
         </nav>
 
         <ul class="flex items-center text-[16px] gap-5 font-medium">
