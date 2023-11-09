@@ -8,28 +8,19 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
     <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
 
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/webfont/css/general-sans.css">
 
     {{-- @vite(['resources/css/app.css']); --}}
 
 </head>
 
 <body>
-    <!-- ==================== Scroll-Top Area (Start) ==================== -->
-    <a href="#" class="scroll-top">
-        <i class="fas fa-long-arrow-alt-up"></i>
-    </a>
-    <!-- ==================== Scroll-Top Area (End) ==================== -->
-
     <!-- ==================== Login Area (Start) ==================== -->
     <section class="login staff-login">
         <form class="account-form" method="POST" action="{{ route('login') }}">

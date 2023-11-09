@@ -26,9 +26,6 @@
         transition: all 0.25s ease;
     }
 
-    .dropdownmenu li:hover a {
-    }
-
     #submenu {
         /* border: 1px solid #e9ecee; */
         background-color: #fff;
@@ -42,7 +39,7 @@
     }
     li:hover ul#submenu {
         opacity: 1;
-        top: 42px;
+        top: 35px;
         visibility: visible;
     }
 

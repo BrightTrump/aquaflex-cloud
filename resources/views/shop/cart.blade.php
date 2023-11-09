@@ -108,7 +108,7 @@
                 <span class="col-span-2 font-semibold text-3xl flex justify-end text-secondary">NGN
                     {{ $total }}</span>
             </div>
-            <button class="bg-primary py-6 rounded-xl text-2xl font-semibold text-white">Proceed to Checkout</button>
+            <a href="/checkout" class="flex items-center justify-center bg-primary py-6 rounded-xl text-2xl font-semibold text-white">Proceed to Checkout</a>
         </div>
     </section>
     <!-- ==================== Cart Area (End) ==================== -->

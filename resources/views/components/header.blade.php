@@ -11,23 +11,23 @@
 
         <nav class="dropdownmenu">
             <ul class="flex text-[16px] font-medium w-full h-full items-center">
-                <li><a href="">Home</a></li>
-                <li><a href="">Services</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="">About<i class="fas fa-angle-down ml-3"></i></a>
-                    <ul id="submenu" class="w-[14rem] border-l-4 border-primary">
+                    <ul id="submenu" class="w-[14rem] border-l-4 border-primary drop-shadow-xl">
                         <li><a href="/about">About Us</a></li>
                         <li> <a href="/team">Team</a></li>
                         <li><a href="/faqs">FAQs</a></li>
                     </ul>
                 </li>
-                <li><a class="" href="/contact">Contact Us</a></li>
+                <li><a href="/services">Services</a></li>
                 <li><a href="/products">Shop Now</a></li>
+                <li><a class="" href="/contact">Contact Us</a></li>
             </ul>
         </nav>
 
         <ul class="flex items-center text-[16px] gap-5 font-medium">
             <li class="account-nav-item position-relative flex-col-align-center mr-4">
-                <div class="cursor-pointer flex items-center gap-2">
+                <div class="cursor-pointer flex items-center gap-2 relative">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none"
                             class="dng-icon" viewBox="0 0 16 18">
@@ -36,7 +36,12 @@
                                 stroke="#171725" stroke-width="2" stroke-linecap="round"></path>
                         </svg>
                     </span>
-                    <span class="">Account</span>
+                    <span class="">Account
+                        <ul id="submenu" class="w-[14rem] border-l-4 border-primary drop-shadow-xl">
+                            <li><a href="/login">Login</a></li>
+                            <li> <a href="/signup">Signup</a></li>
+                        </ul>
+                    </span>
                 </div>
             </li>
             <li>
