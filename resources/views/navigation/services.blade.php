@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout :title="'Services'">
     @include('components.header')
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">

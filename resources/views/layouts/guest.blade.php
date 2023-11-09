@@ -26,7 +26,8 @@
         'public/assets/css/responsive.css',
         'public/assets/assets/css/custom.css',
         'resources/css/app.css',
-        'public/assets/webfont/css/general-sans.css'
+        'public/assets/webfont/css/general-sans.css',
+        'resources/js/app.js'
         ])
 </head>
 
@@ -41,7 +42,7 @@
 
     {{ $slot }}
 
-    @yield('script')
+    @yield('scripts')
 
     <!-- Jquery -->
     <script src="/vendors/jquery/jquery-3.6.0.js"></script>
@@ -60,7 +61,6 @@
     <script src="/assets/js/projects.js"></script>
     <script src="/assets/js/testi-slider.js"></script>
     <script src="/assets/js/sponsor-slider.js"></script>
-    <script src="/assets/js/add-to-cart.js"></script>
 </body>
 
 </html>

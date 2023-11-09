@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('/assets/webfont/general-sans.css');
+@import url("/assets/webfont/general-sans.css");
 
 * {
     padding: 0;
@@ -12,53 +12,44 @@
 }
 
 @layer utilities {
-    /* Notification Hover */
-    .header__dropmenu:hover .dropdown-card {
+    .dropdownmenu li {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .dropdownmenu a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.25s ease;
+    }
+
+    #submenu {
+        /* border: 1px solid #e9ecee; */
+        background-color: #fff;
+        border-radius: 4px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 42px;
+        visibility: hidden;
+        z-index: 9999;
+    }
+    li:hover ul#submenu {
         opacity: 1;
+        top: 35px;
         visibility: visible;
-        transform: translateY(0px);
-    }
-    .dropdown-card.dropdown-card__alarm {
-        text-align: left;
-        left: initial;
-        right: -85px;
-        min-width: 450px;
-    }
-    .dropdown-card::before {
-        right: 75px;
-        left: initial;
-    }
-    .dropdown-card__alarm .dropdown-card-info {
-        align-items: flex-start;
     }
 
-    .alarm__text {
-        padding: 0;
-        margin: 0;
-        font-size: 14px;
-        font-weight: 400;
-        margin-top: 5px;
-        line-height: initial;
+    #submenu li {
+        padding: 10px 20px;
     }
-    .notifications {
-        padding: 30px;
-        border-radius: 8px;
+    #submenu li:hover{
+        background-color: #f8f8f8;
     }
+    #submenu a:hover {
 
-    .chatbox__list.chatbox__list__header .chatbox__inner {
-        padding: 0;
-        margin: 0;
-        border-bottom: 0;
-    }
-    .chatbox__list.chatbox__list__header li {
-        background: none;
-    }
-    .chatbox__list.chatbox__list__header li .chatbox__author-desc {
-        line-height: initial;
-        padding: 0;
-    }
-
-    .chatbox__list.chatbox__list__header .chatbox__time {
-        line-height: 24px;
     }
 }

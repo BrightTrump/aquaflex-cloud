@@ -21,7 +21,9 @@ class ProductsController extends Controller
         return view('shop.products', compact('products'));
     }
 
-    public function cart(){
+    public function cart()
+    {
+
         return view('shop.cart');
     }
 
@@ -116,20 +118,32 @@ class ProductsController extends Controller
      */
     public function update(Request $request)
     {
-        dd($request->all());
+
         if ($request->id && $request->quantity) {
             $cart                           = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
             session()->flash('success', 'Cart successfully updated!');
+
+            return response('Cart successfully updated!');
         }
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destory($id)
     {
-        //
+        if ($id) {
+            $cart = session()->get('cart');
+            if (isset($cart[$id])) {
+                unset($cart[$id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product successfully removed!');
+            return response('Product successfully removed!');
+        }
+        return response($id);
     }
 }

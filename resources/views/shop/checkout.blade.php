@@ -1,21 +1,5 @@
-<x-guest-layout>
+<x-guest-layout :title="'Checkout'">
     @include('components.header')
-
-    <!-- ==================== Page-Title (Start) ==================== -->
-    <div class="page-title">
-        <div class="container">
-            <div class="title">
-                <h2>Checkout</h2>
-            </div>
-
-            <div class="link">
-                <a href="/">Home</a>
-                <i class="fa-solid fa-angles-right"></i>
-                <span class="page">Checkout</span>
-            </div>
-        </div>
-    </div>
-    <!-- ==================== Page-Title (End) ==================== -->
 
     <!-- ==================== Checkout Area (Start) ==================== -->
     <section>
