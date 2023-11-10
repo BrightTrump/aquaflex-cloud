@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NavigationController;
 use App\Http\Controllers\OrderFromStoreController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -21,30 +22,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/team', function () {
-    return view('team');
-});
-Route::get('/faqs', function () {
-    return view('faqs');
-});
-Route::get('/services', function () {
-    return view('services');
-});
-Route::get('/shop-grid', function () {
-    return view('shop-grid');
-});
+Route::get('/services', [NavigationController::class,'services']);
+Route::get('/about', [NavigationController::class,'about']);
+Route::get('/faqs', [NavigationController::class,'faqs']);
+Route::get('/team', [NavigationController::class,'team']);
+Route::get('contact', [NavigationController::class,'contact']);
+
 Route::get('/product-single', function () {
     return view('product-single');
 });
-Route::get('/checkout', function () {
-    return view('checkout');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+
 Route::get('/admin', function () {
     return view('admin');
 });
@@ -74,4 +61,4 @@ Route::middleware(['auth', 'isAdminOrSaleManager'])->group(function () {
 
 
 require __DIR__ . '/auth.php';
-require __DIR__ . '/custom/product.php';
+require __DIR__ . '/custom/shop.php';

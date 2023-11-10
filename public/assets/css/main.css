@@ -24,6 +24,7 @@
     -moz-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
+    font-family: "GeneralSans-Variable", sans-serif;
 }
 
 *::selection {

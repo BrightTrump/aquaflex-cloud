@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout :title="'FAQs'">
     @include('components.header')
 
     <!-- ==================== Page-Title (Start) ==================== -->
