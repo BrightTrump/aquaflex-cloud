@@ -19,6 +19,7 @@
 
     <!-- Swiper (CSS) -->
     <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Custom Stylesheets -->
     @vite([
@@ -41,8 +42,7 @@
 
     {{ $slot }}
 
-    @yield('script')
-
+    @yield('scripts')
     <!-- Jquery -->
     <script src="/vendors/jquery/jquery-3.6.0.js"></script>
 

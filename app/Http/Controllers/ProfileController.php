@@ -21,6 +21,15 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function orderHistory(): View
+    {
+        return view('profile.order-history');
+    }
+    public function orderDetails(): View
+    {
+        return view('profile.order-details');
+    }
+
     /**
      * Update the user's profile information.
      */

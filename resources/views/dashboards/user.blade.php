@@ -70,7 +70,7 @@
 
         <div class="parent">
             <div class="sub-parent">
-                <h3 class="personal">Persona Information</h3>
+                <h3 class="personal">Personal Information</h3>
                 <div class="info-parent">
                     <div class="info-content">
                         <h3 class="title">Name:</h3>

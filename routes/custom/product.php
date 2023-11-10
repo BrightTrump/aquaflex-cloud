@@ -6,4 +6,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('products', [ProductsController::class, 'index']);
 Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart'])->name('add_to_cart');
 Route::get('cart', [ProductsController::class, 'cart']);
-Route::get('update', [ProductsController::class,'update'])->name('cart_update');
+Route::patch('update', [ProductsController::class,'update'])->name('cart_update');
