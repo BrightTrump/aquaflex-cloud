@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Cart extends Model
+class UserAddress extends Model
 {
     use HasFactory;
 
-    public function user(): BelongsTo
+    public function user() : BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function cartItems() : HasMany
+    public function address() : BelongsTo
     {
-        return $this->hasMany(CartItem::class);
+        return $this->belongsTo(Address::class);
     }
-
 }

@@ -17,14 +17,13 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'category' => $this->faker->randomElement(['water', 'drink']),
+            'category_id' => $this->faker->randomElement([1,2]),
             'name'=> fake()->words(3, true),
-            'price' => fake()->randomDigit(),
-            'size' => fake()->randomDigit(),
-            'contain' => $this->faker->numberBetween(6,10),
-            'unit' => $this->faker->randomElement(['CL', 'L']),
-            'thumbnail' => fake()->imageUrl(),
-            'available' => 20,
+            // 'price' => fake()->randomDigit(),
+            // 'size' => fake()->randomDigit(),
+            // 'contain' => $this->faker->numberBetween(6,10),
+            // 'unit' => $this->faker->randomElement(['CL', 'L']),
+            'product_image' => fake()->imageUrl(),
         ];
     }
 }

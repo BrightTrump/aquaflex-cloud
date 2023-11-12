@@ -21,45 +21,12 @@ class ProductsController extends Controller
         return view('shop.products', compact('products'));
     }
 
-    public function cart()
-    {
-
-        return view('shop.cart');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
     public function create(): View
     {
         return view('product.add');
-    }
-
-    public function addToCart($id)
-    {
-
-        $product = Product::findOrFail($id);
-
-        $cart = session()->get('cart', []);
-
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-        } else {
-            $cart[$id] = [
-                "category" => $product->category,
-                "name" => $product->name,
-                "price" => $product->price,
-                "size" => $product->size,
-                "contain" => $product->contain,
-                "unit" => $product->unit,
-                "thumbnail" => $product->thumbnail,
-                "quantity" => 1
-            ];
-        }
-
-        session()->put('cart', $cart);
-        //dd(session('cart'));
-        return redirect()->back()->with('success', 'Product add to cart successfully!');
     }
 
     /**
@@ -113,37 +80,4 @@ class ProductsController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request)
-    {
-
-        if ($request->id && $request->quantity) {
-            $cart                           = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
-            session()->put('cart', $cart);
-            session()->flash('success', 'Cart successfully updated!');
-
-            return response('Cart successfully updated!');
-        }
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destory($id)
-    {
-        if ($id) {
-            $cart = session()->get('cart');
-            if (isset($cart[$id])) {
-                unset($cart[$id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Product successfully removed!');
-            return response('Product successfully removed!');
-        }
-        return response($id);
-    }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
@@ -20,9 +21,14 @@ class Product extends Model
         "thumbnail",
     ];
 
-    public function products(): HasMany
+    public function category(): BelongsTo
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(ProductCategory::class);
+    }
+
+    public function productItems(): HasMany
+    {
+        return $this->hasMany(ProductItem::class);
     }
 
 }
