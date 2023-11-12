@@ -1,3 +1,9 @@
+@php
+    use App\Http\Controllers\CartController;
+
+    $cartController = new CartController();
+
+@endphp
 <!-- ==================== Header Area (Start) ==================== -->
 <header>
     <!-- ===== Header Area (Start) ===== -->
@@ -46,6 +52,7 @@
             </li>
             <li>
                 <a href="/cart" role="button" aria-label="view basket" class="flex items-center gap-4">
+
                     <div class="relative">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
                             viewBox="0,0,256,256">
@@ -66,6 +73,12 @@
                             <span
                                 class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
                                 {{ count((array) session('cart')) }}
+                            </span>
+                        @endif
+                        @if ($cartController->countQuantity() !== 0 && Auth::user())
+                            <span
+                                class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
+                                {{ $cartController->countQuantity() }}
                             </span>
                         @endif
                     </div>
