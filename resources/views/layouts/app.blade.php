@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/css/style.css'])
+    <link rel="stylesheet" href="/assets/css/user.css">
+    <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
 </head>
 
 <body x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));

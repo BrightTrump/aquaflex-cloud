@@ -1,4 +1,7 @@
-@php $total = 0 @endphp
+@php 
+$total = 0 
+
+@endphp
 <x-guest-layout :title="'Cart'">
     @include('components.header')
     <section class="px-30 flex gap-20 justify-between bg-gray-50">
