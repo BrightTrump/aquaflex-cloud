@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Product;
+use App\Models\ProductItem;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -14,24 +16,24 @@ class CartController extends Controller
     public function cart()
     {
         $cartItems = [];
-        if(Auth::check()){
-            $cart = Auth::user()->cart()->with('cartItems.product')->first();
-            $cartItems = $cart ? $cart->cartItems : [];
-            return view('shop.cart', compact('cartItems'));
+        if (Auth::check()) {
+            $cart      = Auth::user()->cart()->with('cartItems.productItem')->first();
+
+            return view('shop.cart', ['cartItems' => $cart ? $cart->cartItems : [], 'totalQty' => $this->countQuantity()]);
         }
         return view('shop.cart', compact('cartItems'));
     }
+
     public function addToCart($id)
     {
 
-        $product = Product::findOrFail($id);
+        $productItem = ProductItem::findOrFail($id);
 
         if (!Auth::check()) {
-            return $this->addToSessionCart($id, $product);
+            return $this->addToSessionCart($id, $productItem);
         }
 
-        return $this->addToDatabaseCart($product);
-
+        return $this->addToDatabaseCart($productItem);
     }
 
     /**
@@ -40,11 +42,11 @@ class CartController extends Controller
     public function update(Request $request)
     {
         if ($request->id && $request->quantity) {
-            if(Auth::check()){
-                $cartItem = CartItem::findOrFail($request->id);
+            if (Auth::check()) {
+                $cartItem           = CartItem::findOrFail($request->id);
                 $cartItem->quantity = $request->quantity;
                 $cartItem->save();
-            }else{
+            } else {
                 $cart                           = session()->get('cart');
                 $cart[$request->id]["quantity"] = $request->quantity;
                 session()->put('cart', $cart);
@@ -61,11 +63,10 @@ class CartController extends Controller
     public function destory($id)
     {
         if ($id) {
-            if(Auth::check()){
+            if (Auth::check()) {
                 $cartItem = CartItem::find($id);
                 $cartItem->delete();
-            }
-            else{
+            } else {
                 $cart = session()->get('cart');
                 if (isset($cart[$id])) {
                     unset($cart[$id]);
@@ -95,50 +96,41 @@ class CartController extends Controller
 
     public function countQuantity()
     {
-        if(Auth::check()){
-            $cart      = Cart::where('user_id', auth()->user()->id)->first();
-            $cartItems = CartItem::where('cart_id', $cart->id)->get();
-            $totalQty  = 0;
+        $totalQty = 0;
+        if (Auth::check()) {
+            $cart = Cart::where('user_id', auth()->user()->id)->first();
+            if ($cart) {
+                $cartItems = CartItem::where('cart_id', $cart->id)->get();
 
-            foreach ($cartItems as $cartItem) {
-                $totalQty += $cartItem->quantity;
+                foreach ($cartItems as $cartItem) {
+                    $totalQty += $cartItem->qty;
+                }
             }
-
-            return $totalQty;
         }
+        return $totalQty;
     }
 
-    private function addToDatabaseCart($product)
+    private function addToDatabaseCart($productItem)
     {
         if (Auth::check()) {
 
             $cart = Cart::where('user_id', auth()->user()->id)->first();
 
+
             if ($cart) {
 
-                $cartItem = CartItem::where('product_id', $product->id)->first();
+                $cartItem = CartItem::where('product_item_id', $productItem->id)->first();
 
                 if ($cartItem) {
-                    $cartItem->quantity = $cartItem->quantity + 1;
+                    $cartItem->qty = $cartItem->qty + 1;
                     $cartItem->save();
                 } else {
-                    $cartItem = new CartItem();
-                    $cartItem->cart()->associate($cart);
-                    $cartItem->product()->associate($product);
-                    $cartItem->save();
+                    $this->createNewCartItem($cart, $productItem);
                 }
             } else {
+                $cart = Auth::user()->cart()->create();
 
-                $cart = new Cart([
-                    'user_id' => auth()->user()->id,
-                ]);
-
-                $cart->save();
-                $cartItem = new CartItem();
-                $cartItem->cart()->associate($cart);
-                $cartItem->product()->associate($product);
-                $cartItem->save();
-
+                $this->createNewCartItem($cart, $productItem);
             }
 
             return redirect()->back()->with('success', 'Product add to cart successfully!');
@@ -168,6 +160,13 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
         return redirect()->back()->with('success', 'Product add to cart successfully!');
+    }
+
+    private function createNewCartItem($cart, $productItem){
+        $cartItem = new CartItem();
+        $cartItem->cart()->associate($cart);
+        $cartItem->productItem()->associate($productItem);
+        $cartItem->save();
     }
 
 }

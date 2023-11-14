@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\ProductItem;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -17,8 +18,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('shop.products', compact('products'));
+        return view('shop.products', ['products' => Product::with('productItems')->get()]);
     }
 
     /**
@@ -47,21 +47,21 @@ class ProductsController extends Controller
         // Save the data to database
         $product->save();
 
-        if ($request->hasFile('variant')) {
-            foreach ($request->file('variant') as $file) {
+        // if ($request->hasFile('variant')) {
+        //     foreach ($request->file('variant') as $file) {
 
-                // Extract and store the variant in storage path
-                $productImage = new ProductImage([
-                    'image' => $file->store('products-variant', 'public')
-                ]);
+        //         // Extract and store the variant in storage path
+        //         $productImage = new ProductImage([
+        //             'image' => $file->store('products-variant', 'public')
+        //         ]);
 
-                // Link to the main product
-                $productImage->product()->associate($product);
+        //         // Link to the main product
+        //         $productImage->product()->associate($product);
 
-                // Save the variant to database
-                $productImage->save();
-            }
-        }
+        //         // Save the variant to database
+        //         $productImage->save();
+        //     }
+        // }
         return back();
     }
     /**

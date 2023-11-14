@@ -19,11 +19,7 @@ class ProductFactory extends Factory
         return [
             'category_id' => $this->faker->randomElement([1,2]),
             'name'=> fake()->words(3, true),
-            // 'price' => fake()->randomDigit(),
-            // 'size' => fake()->randomDigit(),
-            // 'contain' => $this->faker->numberBetween(6,10),
-            // 'unit' => $this->faker->randomElement(['CL', 'L']),
-            'product_image' => fake()->imageUrl(),
+            'product_image' => fake()->imageUrl(640, 480),
         ];
     }
 }
