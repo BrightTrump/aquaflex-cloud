@@ -1,9 +1,6 @@
 <x-guest-layout :title="'Create Account'">
     @include('components.header')
 
-
-
-
     <!-- ==================== Register Area (Start) ==================== -->
     <section class="register staff-login">
         <form class="account-form" action="#">
@@ -19,13 +16,13 @@
                 <label for="email" class="far fa-envelope"></label>
             </div>
             <div class="input-field">
-                <input type="password" name="password" placeholder="Enter Your Password" id="password" class="box"
+                <input type="password" name="password" placeholder="Enter Your Password" id="password" class="box "
                     required />
                 <label for="password" class="fas fa-lock"></label>
             </div>
             <div class="input-field">
                 <input type="password" name="repeat-password" placeholder="Repeat Your Password" id="repeat-password"
-                    class="box" required />
+                    class="box " required />
                 <label for="repeat-password" class="fas fa-lock"></label>
             </div>
 

@@ -1,4 +1,4 @@
-@import url("/assets/webfont/css/general-sans.css");
+/* @import url("/assets/webfont/css/general-sans.css"); */
 
 /* ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com */
 
@@ -1776,6 +1776,11 @@ select {
   padding-bottom: 2rem;
 }
 
+.py-\[32px\] {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -2088,6 +2093,10 @@ select {
 .ring-gray-300 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+
+.ring-transparent {
+  --tw-ring-color: transparent;
 }
 
 .ring-opacity-5 {
