@@ -1,10 +1,9 @@
-/* @import url('/assets/webfont/css/general-sans.css'); */
+/* @import url("/assets/webfont/css/general-sans.css"); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("/assets/webfont/general-sans.css");
 
 * {
     padding: 0;

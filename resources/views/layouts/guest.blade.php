@@ -22,14 +22,11 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Custom Stylesheets -->
-    @vite([
-        'public/assets/css/main.css',
-        'public/assets/css/responsive.css',
-        'public/assets/assets/css/custom.css',
-        'resources/css/app.css',
-        'public/assets/webfont/css/general-sans.css',
-        'resources/js/app.js'
-        ])
+    <link rel="stylesheet" href="/build/assets/style-b65c8452.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
 </head>
 
 <body>
@@ -42,9 +39,6 @@
     <!-- ==================== Scroll-Top Area (End) ==================== -->
 
     {{ $slot }}
-
-    @yield('scripts')
-    @yield('scripts')
 
     <!-- Jquery -->
     <script src="/vendors/jquery/jquery-3.6.0.js"></script>

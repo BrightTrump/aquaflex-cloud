@@ -82,7 +82,7 @@
                     </div>
                     <div class="info-content">
                         <h3 class="title">Phone:</h3>
-                        <p class="title-desc">Bright Munemu</p>
+                        <p class="title-desc">+2347062948871</p>
                     </div>
                     <div class="info-content">
                         <h3 class="title">City:</h3>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="info-content">
                         <h3 class="title">Phone:</h3>
-                        <p class="title-desc">Bright Munemu</p>
+                        <p class="title-desc">+2347062948871</p>
                     </div>
                     <div class="info-content">
                         <h3 class="title">City:</h3>

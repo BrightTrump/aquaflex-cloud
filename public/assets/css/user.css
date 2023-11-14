@@ -57,13 +57,19 @@
 .container .parent .sub-parent {
   background-color: #bdd1db;
   width: 48.5%;
-  padding: 2em 1em 2em 2em;
+  padding: 2em 1em 2em 1em;
 }
 .container .parent .sub-parent .personal {
   color: #000;
   font-size: 1.3em;
   font-weight: bold;
   padding-bottom: 1em;
+}
+.container .parent .sub-parent .info-parent {
+  display: block;
+  margin: 0;
+  width: 31vw;
+  border: 1px solid red;
 }
 .container .parent .sub-parent .info-parent .info-content {
   display: -moz-flexbox;
@@ -73,7 +79,8 @@
 }
 .container .parent .sub-parent .info-parent .info-content .title {
   font-size: 1.2em;
-  width: 5vw;
+  width: 7vw;
+  border: 1px solid black;
   padding-bottom: 1em;
 }
 .container .parent .sub-parent .info-parent .info-content .title-desc {
@@ -82,18 +89,18 @@
 }
 
 .main-container {
-  width: 100%;
   display: flex;
   display: -moz-flexbox;
   display: -o-flexbox;
   gap: 1em;
   padding: 3em 1em 2em 2em;
+  width: 85%;
 }
 .main-container .profil {
-  width: 65%;
+  width: 55%;
 }
 .main-container .profil .form-content {
-  width: 65%;
+  width: 97%;
   display: flex;
   display: -moz-flexbox;
   display: -o-flexbox;
@@ -102,11 +109,7 @@
   -ms-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   -o-flex-wrap: wrap;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -o-justify-content: space-between;
+  gap: 2em;
 }
 .main-container .profil .form-content div {
   padding-bottom: 1em;
@@ -496,18 +499,18 @@
     color: #302f2f;
   }
   .main-container {
-    width: 100%;
     display: flex;
     display: -moz-flexbox;
     display: -o-flexbox;
     gap: 1em;
     padding: 3em 1em 2em 2em;
+    width: 95%;
   }
   .main-container .profil {
     width: 65%;
   }
   .main-container .profil .form-content {
-    width: 65%;
+    width: 97%;
     display: flex;
     display: -moz-flexbox;
     display: -o-flexbox;
@@ -516,11 +519,7 @@
     -ms-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
     -o-flex-wrap: wrap;
-    justify-content: space-between;
-    -webkit-justify-content: space-between;
-    -ms-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -o-justify-content: space-between;
+    gap: 2em;
   }
   .main-container .profil .form-content div {
     padding-bottom: 1em;
@@ -530,7 +529,7 @@
   }
   .main-container .profil .form-content div input {
     padding: 0.8em;
-    width: 20vw;
+    width: 27vw;
     border: 1px solid rgb(161, 157, 157);
     border-radius: 0.5em;
   }
@@ -541,7 +540,7 @@
     font-size: 1.2em;
   }
   .main-container .profil .address-div .address-input {
-    width: 41.2vw;
+    width: 56vw;
     padding: 0.8em;
     border: 1px solid rgb(161, 157, 157);
     border-radius: 0.5em;
@@ -577,11 +576,11 @@
     color: var(--black);
   }
   .main-container .pic-container {
-    width: 18%;
+    width: 36%;
   }
   .main-container .pic-container .pic-content {
-    width: 18.4vw;
-    height: 58vh;
+    width: 32vw;
+    height: 38vh;
     border: 0.1px solid rgb(245, 243, 243);
     padding: 2em;
   }
@@ -599,8 +598,8 @@
     position: absolute;
   }
   .main-container .pic-container .pic-content .img-parent-div .img-div {
-    width: 15vw;
-    height: 30vh;
+    width: 25vw;
+    height: 20vh;
   }
   .main-container .pic-container .pic-content .img-parent-div .img-div img {
     width: 100%;
@@ -612,7 +611,7 @@
     background-color: black;
     border-radius: 60%;
     bottom: 5em;
-    left: 16em;
+    left: 17em;
     padding: 0.3em 0.5em;
   }
   .main-container .pic-container .pic-content .img-parent-div .hidden {
@@ -824,6 +823,125 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  .main-container {
+    display: flex;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    gap: 1em;
+    padding: 3em 1em 2em 2em;
+    width: 95%;
+  }
+  .main-container .profil {
+    width: 65%;
+  }
+  .main-container .profil .form-content {
+    width: 97%;
+    display: flex;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    gap: 2em;
+  }
+  .main-container .profil .form-content div {
+    padding-bottom: 1em;
+  }
+  .main-container .profil .form-content div label {
+    font-size: 1.2em;
+  }
+  .main-container .profil .form-content div input {
+    padding: 0.8em;
+    width: 57vw;
+    border: 1px solid rgb(161, 157, 157);
+    border-radius: 0.5em;
+  }
+  .main-container .profil .address-div {
+    padding-bottom: 1em;
+  }
+  .main-container .profil .address-div .address-label {
+    font-size: 1.2em;
+  }
+  .main-container .profil .address-div .address-input {
+    width: 56vw;
+    padding: 0.8em;
+    border: 1px solid rgb(161, 157, 157);
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+  }
+  .main-container .profil .btn-div {
+    width: 40%;
+    display: flex;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    gap: 1.5em;
+  }
+  .main-container .profil .btn-div .cancel-btn {
+    background-color: rgb(203, 220, 220);
+    color: red;
+    font-size: 1.3em;
+    border-radius: 0.5em;
+    padding: 0.2em 0.7em;
+  }
+  .main-container .profil .btn-div .cancel-btn:hover {
+    background-color: rgb(228, 237, 237);
+    color: black;
+  }
+  .main-container .profil .btn-div .update-cta {
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+    border-radius: 0.5em;
+    padding: 0.6em 1em;
+  }
+  .main-container .profil .btn-div .update-cta:hover {
+    background-color: rgb(10, 236, 236);
+    color: var(--black);
+  }
+  .main-container .pic-container {
+    width: 36%;
+  }
+  .main-container .pic-container .pic-content {
+    width: 32vw;
+    height: 38vh;
+    border: 0.1px solid rgb(245, 243, 243);
+    padding: 2em;
+  }
+  .main-container .pic-container .pic-content .pic-heading {
+    font-size: 1.2em;
+    padding-bottom: 0.8em;
+  }
+  .main-container .pic-container .pic-content .pic-info {
+    padding-bottom: 3em;
+  }
+  .main-container .pic-container .pic-content .pic-info span {
+    font-weight: bold;
+  }
+  .main-container .pic-container .pic-content .img-parent-div {
+    position: absolute;
+  }
+  .main-container .pic-container .pic-content .img-parent-div .img-div {
+    width: 25vw;
+    height: 20vh;
+  }
+  .main-container .pic-container .pic-content .img-parent-div .img-div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .main-container .pic-container .pic-content .img-parent-div svg {
+    position: relative;
+    background-color: black;
+    border-radius: 60%;
+    bottom: 5em;
+    left: 16em;
+    padding: 0.3em 0.5em;
+  }
+  .main-container .pic-container .pic-content .img-parent-div .hidden {
+    display: none;
+  }
   .order-parent .order-container .content-div {
     width: 83%;
   }
@@ -850,6 +968,128 @@
   }
 }
 @media only screen and (max-width: 450px) {
+  .main-container {
+    display: flex;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    gap: 2em;
+    padding: 3em 1em 2em 2em;
+    width: 95%;
+  }
+  .main-container .profil {
+    width: 99%;
+  }
+  .main-container .profil .form-content {
+    width: 98%;
+    display: flex;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    gap: 2em;
+  }
+  .main-container .profil .form-content div {
+    padding-bottom: 1em;
+  }
+  .main-container .profil .form-content div label {
+    font-size: 1.2em;
+  }
+  .main-container .profil .form-content div input {
+    padding: 0.8em;
+    width: 85vw;
+    border: 1px solid rgb(161, 157, 157);
+    border-radius: 0.5em;
+  }
+  .main-container .profil .address-div {
+    padding-bottom: 1em;
+  }
+  .main-container .profil .address-div .address-label {
+    font-size: 1.2em;
+  }
+  .main-container .profil .address-div .address-input {
+    width: 85vw;
+    padding: 0.8em;
+    border: 1px solid rgb(161, 157, 157);
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+  }
+  .main-container .profil .btn-div {
+    width: 40%;
+    display: flex;
+    display: -moz-flexbox;
+    display: -o-flexbox;
+    gap: 1.5em;
+  }
+  .main-container .profil .btn-div .cancel-btn {
+    background-color: rgb(203, 220, 220);
+    color: red;
+    font-size: 1.3em;
+    border-radius: 0.5em;
+    padding: 0.2em 0.7em;
+  }
+  .main-container .profil .btn-div .cancel-btn:hover {
+    background-color: rgb(228, 237, 237);
+    color: black;
+  }
+  .main-container .profil .btn-div .update-cta {
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+    border-radius: 0.5em;
+    padding: 0.6em 1em;
+  }
+  .main-container .profil .btn-div .update-cta:hover {
+    background-color: rgb(10, 236, 236);
+    color: var(--black);
+  }
+  .main-container .pic-container {
+    width: 95%;
+  }
+  .main-container .pic-container .pic-content {
+    width: 62vw;
+    height: 45vh;
+    border: 0.1px solid rgb(245, 243, 243);
+    padding: 2em;
+  }
+  .main-container .pic-container .pic-content .pic-heading {
+    font-size: 1.2em;
+    padding-bottom: 0.8em;
+  }
+  .main-container .pic-container .pic-content .pic-info {
+    padding-bottom: 3em;
+  }
+  .main-container .pic-container .pic-content .pic-info span {
+    font-weight: bold;
+  }
+  .main-container .pic-container .pic-content .img-parent-div {
+    position: absolute;
+  }
+  .main-container .pic-container .pic-content .img-parent-div .img-div {
+    width: 65vw;
+    height: 30vh;
+  }
+  .main-container .pic-container .pic-content .img-parent-div .img-div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .main-container .pic-container .pic-content .img-parent-div svg {
+    position: relative;
+    background-color: black;
+    border-radius: 60%;
+    bottom: 5em;
+    left: 20em;
+    padding: 0.3em 0.5em;
+  }
+  .main-container .pic-container .pic-content .img-parent-div .hidden {
+    display: none;
+  }
   .order-parent {
     margin: 2em;
   }
