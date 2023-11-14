@@ -30,6 +30,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if(Auth::check() && session('cart')){
+            foreach (session('cart') as $id => $details) {
+                
+            }
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
