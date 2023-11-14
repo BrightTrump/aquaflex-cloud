@@ -2095,10 +2095,6 @@ select {
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
 }
 
-.ring-transparent {
-  --tw-ring-color: transparent;
-}
-
 .ring-opacity-5 {
   --tw-ring-opacity: 0.05;
 }

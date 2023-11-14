@@ -22,7 +22,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="/build/assets/style-093b077b.css" />
+    <link rel="stylesheet" href="/build/assets/style-cd30a69b.css" />
+    <link rel="stylesheet" href="/build/assets/app-d96e27dc.js" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <link rel="stylesheet" href="/assets/css/custom.css" />
