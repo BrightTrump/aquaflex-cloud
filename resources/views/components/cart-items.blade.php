@@ -1,11 +1,16 @@
 <div class="basis-[70%] border border-gray-150 bg-white rounded-3xl p-10 flex flex-col gap-8">
-    <h1 class="font-semibold text-3xl">Cart ({{ count((array) session('cart')) }})</h1>
+    <h1 class="font-semibold text-3xl">Cart
+        @if(Auth::check())
+            ({{ $totalQty }})
+        @endif
+    </h1>
 
     <div x-data='cart'>
         @if (count($cartItems) != 0)
             @foreach ($cartItems as $cartItem)
                 @php
-                    $total += $cartItem->product->price * $cartItem->quantity;
+
+                    $total += $cartItem->productItem->price * $cartItem->qty;
                 @endphp
 
                 <div x-data="{ cartItemId: {{ $cartItem->id }}, csrfToken: '{{ csrf_token() }}', cartUpdatePath: '{{ route('update_cart') }}', cartRemovePath: '{{ route('remove_from_cart', $cartItem->id) }}' }" class="grid grid-cols-12 items-center gap-10 border-t py-8">
@@ -15,16 +20,16 @@
                     </div>
 
                     <div class="">
-                        <img src="{{ $cartItem->product->thumbnail }}" class="img" alt="">
+                        <img src="{{ $cartItem->productItem->product_image }}" class="img" alt="">
                     </div>
                     <div class="col-span-4 ">
 
-                        <h3 class="font-semibold text-3xl">{{ $cartItem->product->name }}</h3>
-                        <p class="text-2xl font-medium">{{ $cartItem->product->size }}{{ $cartItem->product->unit }} x
+                        <h3 class="font-semibold text-3xl">{{ $cartItem->productItem->name }}</h3>
+                        <p class="text-2xl font-medium">{{ $cartItem->productItem->size }}{{ $cartItem->productItem->unit }} x
                             {{ $cartItem->quantity }} Bottle</p>
 
                     </div>
-                    <div class="flex justify-between items-center gap-5 col-span-2" x-data="{ 'quantity': {{ $cartItem->quantity }} }">
+                    <div class="flex justify-between items-center gap-5 col-span-2" x-data="{ 'quantity': {{ $cartItem->qty }} }">
 
                         <button class="bg-primary w-10 h-10 p-2 rounded-md flex justify-center items-center cart_update"
                             x-on:click="quantity > 1 ? (quantity--, cartUpdate(quantity, cartItemId, cartUpdatePath, csrfToken) ): 1;">
@@ -66,7 +71,7 @@
 
                     <div class="font-semibold text-3xl col-span-3 flex justify-end
                         ">
-                        ₦{{ $cartItem->product->price * $cartItem->quantity }}</div>
+                        ₦{{ $cartItem->productItem->price * $cartItem->qty }}</div>
 
                 </div>
             @endforeach

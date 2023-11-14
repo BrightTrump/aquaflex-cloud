@@ -75,7 +75,7 @@
                                 {{ count((array) session('cart')) }}
                             </span>
                         @endif
-                        @if ($cartController->countQuantity() !== 0 && Auth::user())
+                        @if ($cartController->countQuantity() !== 0 && Auth::check())
                             <span
                                 class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
                                 {{ $cartController->countQuantity() }}
