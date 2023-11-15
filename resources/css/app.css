@@ -5,14 +5,14 @@
 @tailwind utilities;
 
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "GeneralSans-Variable", sans-serif;
-}
 
 @layer utilities {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "GeneralSans-Variable", sans-serif;
+    }
     .dropdownmenu li {
         position: relative;
         height: 100%;
@@ -50,7 +50,5 @@
     #submenu li:hover{
         background-color: #f8f8f8;
     }
-    #submenu a:hover {
-
-    }
+    
 }
