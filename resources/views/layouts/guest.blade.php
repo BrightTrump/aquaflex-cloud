@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>{{ config('app.name', 'Laravel') }} | {{$title}}</title>
+    <title>{{ config('app.name', 'Laravel') }} | {{ $title }}</title>
 
     <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Stylesheets -->
     {{-- <link rel="stylesheet" href="/build/assets/style-68f7ae22.css" /> --}}
@@ -31,6 +31,38 @@
     <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script>
+        tailwind.config = {
+            content: [
+                './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+                './storage/framework/views/*.php',
+                './resources/views/**/*.blade.php',
+            ],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['GeneralSans-Variable', ...defaultTheme.fontFamily.sans],
+                    },
+                    colors: {
+                        primary: '#00ccff',
+                        secondary: '#002c8f',
+                        'gray-350': '#C6C6C7',
+                        'gray-150': '#e9ecee',
+                        'sky-150': '#EBF0FF'
+                        // ...
+                    },
+                    screens: {
+                        xs: "280px",
+                        xm: "570px",
+                        lx: "912px",
+                        xml: "420px",
+                    }
+                },
+            },
+            plugins: [forms],
+        }
+    </script>
 </head>
 
 <body>
