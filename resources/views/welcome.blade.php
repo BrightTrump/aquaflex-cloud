@@ -1,4 +1,4 @@
-<x-guest-layout :title="'Water & Blackcurrant Delivery Company'">
+<x-guest-layout :title="__('Water & Blackcurrant Delivery Company')">
     <!-- ==================== Scroll-Top Area (Start) ==================== -->
     <a href="#" class="scroll-top">
         <i class="fas fa-long-arrow-alt-up"></i>
@@ -241,7 +241,7 @@
         <div class="box">
             <div class="info">
                 <i class="fa-solid fa-briefcase"></i>
-                <h1 class="count" data-count="47">0</h1>
+                <h1 class="count font-semibold" data-count="47">0</h1>
                 <h3>Projects Done</h3>
             </div>
         </div>
@@ -249,7 +249,7 @@
         <div class="box">
             <div class="info">
                 <i class="fa-solid fa-bottle-water"></i>
-                <h1 class="count" data-count="2500">0</h1>
+                <h1 class="count font-semibold" data-count="2500">0</h1>
                 <h3>Bottles Delivered</h3>
             </div>
         </div>
@@ -257,7 +257,7 @@
         <div class="box">
             <div class="info">
                 <i class="fa-solid fa-people-group"></i>
-                <h1 class="count" data-count="1800">0</h1>
+                <h1 class="count font-semibold" data-count="1800">0</h1>
                 <h3>Happy Customers</h3>
             </div>
         </div>
@@ -265,7 +265,7 @@
         <div class="box">
             <div class="info">
                 <i class="fa-solid fa-users-gear"></i>
-                <h1 class="count" data-count="25">0</h1>
+                <h1 class="count font-semibold" data-count="25">0</h1>
                 <h3>Expert Workers</h3>
             </div>
         </div>

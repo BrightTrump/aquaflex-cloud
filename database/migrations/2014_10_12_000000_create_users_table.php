@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone_number');
+            // $table->string('phone_number');
             $table->string('role')->default(RoleEnum::USER);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
