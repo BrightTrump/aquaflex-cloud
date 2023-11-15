@@ -20,14 +20,17 @@
     <!-- Swiper (CSS) -->
     <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="/build/assets/style-cd30a69b.css" />
-    <link rel="stylesheet" href="/build/assets/app-d96e27dc.js" />
+    {{-- <link rel="stylesheet" href="/build/assets/style-68f7ae22.css" /> --}}
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <link rel="stylesheet" href="/assets/css/custom.css" />
     <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>

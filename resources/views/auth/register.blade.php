@@ -3,7 +3,8 @@
 
     <!-- ==================== Register Area (Start) ==================== -->
     <section class="register staff-login">
-        <form class="account-form" action="#">
+        <form method="POST" class="account-form" action="{{route('register')}}">
+            @csrf
             <div class="icon"><i class="fa-solid fa-user"></i></div>
             <h3>Register</h3>
             <div class="input-field">
@@ -21,9 +22,9 @@
                 <label for="password" class="fas fa-lock"></label>
             </div>
             <div class="input-field">
-                <input type="password" name="repeat-password" placeholder="Repeat Your Password" id="repeat-password"
+                <input type="password" name="password_confirmation" placeholder="Confirm Password" id="repeat-password"
                     class="box " required />
-                <label for="repeat-password" class="fas fa-lock"></label>
+                <label for="password_confirmation" class="fas fa-lock"></label>
             </div>
 
             <div class="terms">
