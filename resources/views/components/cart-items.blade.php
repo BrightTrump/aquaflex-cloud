@@ -26,7 +26,7 @@
 
                         <h3 class="font-semibold text-3xl">{{ $cartItem->productItem->name }}</h3>
                         <p class="text-2xl font-medium">{{ $cartItem->productItem->size }}{{ $cartItem->productItem->unit }} x
-                            {{ $cartItem->quantity }} Bottle</p>
+                            {{ $cartItem->productItem->contain }} Bottle</p>
 
                     </div>
                     <div class="flex justify-between items-center gap-5 col-span-2" x-data="{ 'quantity': {{ $cartItem->qty }} }">
