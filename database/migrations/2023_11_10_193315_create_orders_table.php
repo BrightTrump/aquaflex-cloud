@@ -15,9 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamp('order_date');
-            $table->string('shipping_address');
+            $table->string('payment_channel')->nullable();
+            $table->string('receipt_no')->nullable();
+            $table->string('reference');
+            $table->string('authorization_code')->nullable();
+            $table->foreignId('shipping_address')->constrained('addresses');
+            $table->foreignId('shipping_method_id');
             $table->decimal('order_total',10,2);
-            $table->string('order_status');
+            $table->foreignId('order_status_id');
             $table->timestamps();
         });
     }

@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Order;
+use App\Models\OrderStatus;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Enums\OrderStatusEnum;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Unicodeveloper\Paystack\Facades\Paystack;
 
 class PaymentController extends Controller
 {
+    protected $uniqueTransactionId = "AQFL" . Str::random(9);
 
     /**
      * Redirect the User to Paystack Payment Page
@@ -17,10 +23,10 @@ class PaymentController extends Controller
      */
     public function redirectToGateway(Request $request)
     {
-        try{
+        try {
             return Paystack::getAuthorizationUrl()->redirectNow();
-        }catch(\Exception $e) {
-            return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
+        } catch (\Exception $e) {
+            return Redirect::back()->withMessage(['msg' => 'The paystack token has expired. Please refresh the page and try again.', 'type' => 'error']);
         }
     }
 
@@ -32,9 +38,21 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        dd($paymentDetails);
         // Now you have the payment details,
         // you can store the authorization_code in your db to allow for recurrent subscriptions
         // you can then redirect or do whatever you want
+
+        $data = $paymentDetails['data'];
+
+        if($data['status'] == 'success'){
+            $order = Order::where('reference', $data['reference'])->first();
+            $order->status = OrderStatus::where('status', OrderStatusEnum::PENDING)->first()->id;
+            $order->payment_channel = $data['channel'];
+            $order->receipt_no      = $this->uniqueTransactionId;
+            $order->authorization_code = $data['authorization']['authorization_code'];
+
+            $order->save();
+        }
+        return Redirect::back()->withMessage(['msg'=> '','type'=> 'success']);
     }
 }
