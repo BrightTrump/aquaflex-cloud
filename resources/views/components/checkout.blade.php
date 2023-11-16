@@ -7,7 +7,7 @@
                     <span class="font-semibold flex justify-end">NGN {{ $total }}</span>
                 </div>
                 <div class="grid grid-cols-2 text-2xl"><span>Delivery</span>
-                    <span class="font-semibold flex just ify-end">-</span>
+                    <span class="font-semibold flex justify-end">-</span>
                 </div>
             </div>
         </div>

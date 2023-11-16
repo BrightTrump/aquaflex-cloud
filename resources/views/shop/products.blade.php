@@ -2,7 +2,7 @@
     use Illuminate\Support\Facades\Session;
     Session::forget('cart');
 @endphp --}}
-<x-guest-layout :title="''">
+<x-guest-layout :title="'Shop Now'">
     @include('components.header')
 
     <section class="">
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{ route('add_to_cart', $product->id) }}"
+                                <a href="{{ route('add_to_cart', $productItem->id) }}"
                                     class="bg-primary w-full h-[5rem] rounded-xl relative flex items-center justify-center px-4 text-[15px] text-white hover:bg-secondary">
                                     <span class="absolute left-6"> <svg xmlns="http://www.w3.org/2000/svg" x="0px"
                                             y="0px" width="30" height="30" viewBox="0,0,256,256">

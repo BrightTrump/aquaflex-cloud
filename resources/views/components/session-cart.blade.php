@@ -1,10 +1,15 @@
+@php
+    session('cart');
+@endphp
 <div class="basis-[70%] border border-gray-150 bg-white rounded-3xl p-10 flex flex-col gap-8">
     <h1 class="font-semibold text-3xl">Cart ({{ count((array) session('cart')) }})</h1>
 
     <div x-data='cart'>
         @if (session('cart'))
             @foreach (session('cart') as $id => $details)
-                @php $total += $details['price'] * $details['quantity'] @endphp
+                @php
+                    $total += $details['price'] * $details['qty'];
+                @endphp
 
                 <div x-data="{ productId: {{ $id }}, csrfToken: '{{ csrf_token() }}', cartUpdatePath: '{{ route('update_cart') }}', cartRemovePath: '{{ route('remove_from_cart', $id) }}' }" class="grid grid-cols-12 items-center gap-10 border-t py-8">
                     <div class="cursor-pointer flex gap-3 items-center text-red-400 font-semibold text-xl col-span-2"
@@ -13,16 +18,16 @@
                     </div>
 
                     <div class="">
-                        <img src="{{ $details['thumbnail'] }}" class="img" alt="">
+                        <img src="{{ $details['product_image'] }}" class="img" alt="">
                     </div>
                     <div class="col-span-4 ">
 
-                        <h3 class="font-semibold text-3xl">{{ $details['name'] }}</h3>
+                        <h3 class="font-semibold text-3xl">{{ $details['product']->name }}</h3>
                         <p class="text-2xl font-medium">{{ $details['size'] }}{{ $details['unit'] }} x
-                            {{ $details['quantity'] }} Bottle</p>
+                            {{ $details['qty'] }} Bottle</p>
 
                     </div>
-                    <div class="flex justify-between items-center gap-5 col-span-2" x-data="{ 'quantity': {{ $details['quantity'] }} }">
+                    <div class="flex justify-between items-center gap-5 col-span-2" x-data="{ 'quantity': {{ $details['qty'] }} }">
 
                         <button class="bg-primary w-10 h-10 p-2 rounded-md flex justify-center items-center cart_update"
                             x-on:click="quantity > 1 ? (quantity--, cartUpdate(quantity, productId, cartUpdatePath, csrfToken) ): 1;">
@@ -64,7 +69,7 @@
 
                     <div class="font-semibold text-3xl col-span-3 flex justify-end
                         ">
-                        ₦{{ $details['price'] * $details['quantity'] }}</div>
+                        ₦{{ $details['price'] * $details['qty'] }}</div>
 
                 </div>
             @endforeach
