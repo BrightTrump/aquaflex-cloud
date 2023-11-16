@@ -43,30 +43,31 @@ class MigrateCartJob implements ShouldQueue
 
                 // check if productItem is already added
                 $cartItem = CartItem::where('product_item_id', $productItem->id)
-                                        ->where('cart_id', $cart->id)->first();
+                    ->where('cart_id', $cart->id)->first();
 
                 if ($cartItem) {
                     $cartItem->qty = $details['qty'];
                     $cartItem->save();
                 } else {
-                    $cartItem = new CartItem();
-                    $cartItem->cart()->associate($cart);
-                    $cartItem->productItem()->associate($productItem);
-                    $cartItem->qty = $details['qty'];
-                    $cartItem->save();
+                    $this->createNewCartItem($cart, $productItem, $details['qty']);
                 }
             } else {
                 $cart = Auth::user()->cart()->create();
 
-                $cartItem = new CartItem();
-                $cartItem->cart()->associate($cart);
-                $cartItem->productItem()->associate($productItem);
-                $cartItem->qty = $details['qty'];
-                $cartItem->save();
+                $this->createNewCartItem($cart, $productItem, $details['qty']);
             }
         }
         // Destroy session
         Session::forget('cart');
 
+    }
+
+    private function createNewCartItem($cart, $productItem, $qty)
+    {
+        $cartItem = new CartItem();
+        $cartItem->cart()->associate($cart);
+        $cartItem->productItem()->associate($productItem);
+        $cartItem->qty = $qty;
+        $cartItem->save();
     }
 }
