@@ -1,7 +1,8 @@
-{{-- @php
-    use Illuminate\Support\Facades\Session;
-    Session::forget('cart');
-@endphp --}}
+@php
+    // use Illuminate\Support\Facades\Session;
+    // Session::forget('cart');
+    
+@endphp
 <x-guest-layout :title="'Shop Now'">
     @include('components.header')
 
@@ -24,13 +25,14 @@
 
                                 <div class="flex flex-col gap-6">
                                     <div class="w-full h-[5.5rem] bg-sky-50 border border-sky-300 rounded-[1rem] p-4">
-                                        <h1 class="font-semibold text-[13px]">{{ $productItem->size }}{{ $productItem->unit }} x
+                                        <h1 class="font-semibold text-[13px]">
+                                            {{ $productItem->size }}{{ $productItem->unit }} x
                                             {{ $productItem->contain }} Bottle</h1>
-                                        <span class="text-[10px] block">{{ $productItem->size }}{{ $productItem->unit }} x
+                                        <span class="text-[10px] block">{{ $productItem->size }}{{ $productItem->unit }}
+                                            x
                                             {{ $productItem->contain }}Bottle</span>
                                     </div>
-                                    <div
-                                        class="w-full">
+                                    <div class="w-full">
                                         ₦{{ $productItem->price }}
                                     </div>
                                 </div>
@@ -60,7 +62,15 @@
             @endforeach
         </div>
 
+        @if(count($products) == 0)
+        <div
+            class="py-[32px] bg-white border border-gray-150 rounded-xl w-full flex flex-col justify-center items-center gap-6">
+            <img class="-mvs" src="/assets/images/icons8-shop-94.png" height="100" width="100" alt="">
+            <h2 class="text-4xl font-semibold">Store is empty!</h2>
+            <p class="text-3xl">Products will be added soon!</p>
+
         </div>
+        @endif
 
     </section>
 

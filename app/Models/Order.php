@@ -11,9 +11,14 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'reference',
+        'order_total'
+    ];
+
     public function shippingAddress(): BelongsTo
     {
-        return $this->belongsTo(Address::class);
+        return $this->belongsTo(Address::class, 'shipping_address');
     }
 
     public function user(): BelongsTo

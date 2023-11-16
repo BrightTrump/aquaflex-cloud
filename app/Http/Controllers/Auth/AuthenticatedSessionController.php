@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(Auth::check() && session('cart')){
+        if (Auth::check() && session('cart')) {
             // Migrate all cart item in the session
             MigrateCartJob::dispatch(auth()->id())->onQueue('cart_migration');
         }
@@ -51,6 +51,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return back();
     }
 }

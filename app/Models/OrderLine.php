@@ -10,6 +10,10 @@ class OrderLine extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'qty',
+        'price',
+    ];
     public function productItem() : BelongsTo
     {
         return $this->belongsTo(ProductItem::class);
