@@ -1,6 +1,5 @@
-@php 
-$total = 0 
-
+@php
+    $total = 0;
 @endphp
 <x-guest-layout :title="'Cart'">
     @include('components.header')

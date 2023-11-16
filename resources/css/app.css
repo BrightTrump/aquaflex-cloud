@@ -13,6 +13,10 @@
         box-sizing: border-box;
         font-family: "GeneralSans-Variable", sans-serif;
     }
+
+    :root{
+        --primary-color: #00ccff;
+    }
     .dropdownmenu li {
         position: relative;
         height: 100%;
@@ -50,5 +54,5 @@
     #submenu li:hover{
         background-color: #f8f8f8;
     }
-    
+
 }

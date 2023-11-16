@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-span-4 ">
 
-                        <h3 class="font-semibold text-3xl">{{ $cartItem->productItem->name }}</h3>
+                        <h3 class="font-semibold text-3xl">{{ $cartItem->productItem->product->name }}</h3>
                         <p class="text-2xl font-medium">{{ $cartItem->productItem->size }}{{ $cartItem->productItem->unit }} x
                             {{ $cartItem->productItem->contain }} Bottle</p>
 

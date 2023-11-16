@@ -1,7 +1,13 @@
-$(document).ready(function(){
+// Axios
+window.axios = axios;
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+// JQuery
+$(document).ready(function () {
 
   $('.scroll-top').hide();
-  
+
   /*---------- Mobile-Navbar Toggler ----------*/
   let sideBar = document.querySelector('.mobile-menu');
   let searchBtn = document.querySelector("#search");
@@ -16,7 +22,7 @@ $(document).ready(function(){
     $(".nav-link .sub-nav-link").removeClass("active").slideUp()
     $(".nav-link .main-nav-link i").removeClass("fa-minus").addClass("fa-plus");
   }
-  
+
   // On Load/Scroll
   $(window).on('load scroll',function(){
     sideBar.classList.remove('active');
@@ -24,7 +30,7 @@ $(document).ready(function(){
     searchContainer.classList.remove("active");
     $(".nav-link .main-nav-link").removeClass("active");
     $(".nav-link .sub-nav-link").removeClass("active").slideUp()
-    $(".nav-link .main-nav-link i").removeClass("fa-minus").addClass("fa-plus");	
+    $(".nav-link .main-nav-link i").removeClass("fa-minus").addClass("fa-plus");
 
     /*--------------- Sticky Header ---------------*/
     if($(window).scrollTop() > 68){
@@ -46,7 +52,7 @@ $(document).ready(function(){
       $('.scroll-top').fadeOut();
     }
 
-  
+
   });
 
   /*--------------- Scroll-Top ---------------*/
@@ -62,4 +68,33 @@ $(document).ready(function(){
 
 });
 
+
+// Alpine Js
+document.addEventListener('alpine:init', () => {
+    Alpine.data('cart', () => ({
+        cartUpdate(quantity, productId, path, csrf_token) {
+            axios.patch(path, {
+                id: productId,
+                quantity: quantity
+            }, {
+                headers: {
+                    'X-CSRF-TOKEN': csrf_token
+                }
+            }).then((res) => {
+                window.location.reload();
+            })
+        },
+        cartRemove(path, csrf_token) {
+            if (confirm('Do you really want to remove?')) {
+                axios.delete(path, {
+                    headers: {
+                        'X-CSRF-TOKEN': csrf_token
+                    }
+                }).then((res) => {
+                    window.location.reload();
+                })
+            }
+        }
+    }))
+})
 

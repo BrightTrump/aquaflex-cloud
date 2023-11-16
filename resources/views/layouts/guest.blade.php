@@ -21,19 +21,19 @@
     <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
 
     <!-- Custom Stylesheets -->
-    {{-- <link rel="stylesheet" href="/build/assets/style-68f7ae22.css" /> --}}
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <link rel="stylesheet" href="/assets/css/custom.css" />
     <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="/assets/js/alpinejs.min.js"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    @if (config('app.env') != 'production')
+        @vite(['resources/css/app.css',])
+    @endif
     @if (config('app.env') == 'production')
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
-        @include('components.tailwindcss-addon')
+        <link rel="stylesheet" href="/build/assets/style-e5487057.css" />
     @endif
 </head>
 

@@ -6,7 +6,6 @@ use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Product;
 use App\Models\ProductItem;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -17,8 +16,7 @@ class CartController extends Controller
     {
         $cartItems = [];
         if (Auth::check()) {
-            $cart      = Auth::user()->cart()->with('cartItems.productItem')->first();
-
+            $cart = Auth::user()->cart()->with('cartItems.productItem.product')->first();
             return view('shop.cart', ['cartItems' => $cart ? $cart->cartItems : [], 'totalQty' => $this->countQuantity()]);
         }
         return view('shop.cart', compact('cartItems'));
@@ -43,12 +41,12 @@ class CartController extends Controller
     {
         if ($request->id && $request->quantity) {
             if (Auth::check()) {
-                $cartItem           = CartItem::findOrFail($request->id);
-                $cartItem->quantity = $request->quantity;
+                $cartItem      = CartItem::findOrFail($request->id);
+                $cartItem->qty = $request->quantity;
                 $cartItem->save();
             } else {
-                $cart                           = session()->get('cart');
-                $cart[$request->id]["quantity"] = $request->quantity;
+                $cart                      = session()->get('cart');
+                $cart[$request->id]["qty"] = $request->quantity;
                 session()->put('cart', $cart);
                 session()->flash('success', 'Cart successfully updated!');
             }
@@ -138,22 +136,25 @@ class CartController extends Controller
         }
     }
 
-    private function addToSessionCart($id, $product)
+    private function addToSessionCart($id, $productItem)
     {
+        // Add ProductItem and Product
         $cart = session()->get('cart', []);
 
         if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['qty']++;
         } else {
+
+            $product = Product::findOrFail($productItem->product_id);
+
             $cart[$id] = [
-                "category" => $product->category,
-                "name" => $product->name,
-                "price" => $product->price,
-                "size" => $product->size,
-                "contain" => $product->contain,
-                "unit" => $product->unit,
-                "thumbnail" => $product->thumbnail,
-                "quantity" => 1
+                'product' => $product,
+                'product_image' => $productItem->product_image,
+                'price' => $productItem->price,
+                'size' => $productItem->size,
+                'contain' => $productItem->contain,
+                'unit' => $productItem->unit,
+                'qty' => 1
             ];
         }
 
@@ -162,7 +163,8 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product add to cart successfully!');
     }
 
-    private function createNewCartItem($cart, $productItem){
+    private function createNewCartItem($cart, $productItem)
+    {
         $cartItem = new CartItem();
         $cartItem->cart()->associate($cart);
         $cartItem->productItem()->associate($productItem);
