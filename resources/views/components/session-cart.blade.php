@@ -1,8 +1,12 @@
 @php
-    session('cart');
+    $totalQty = 0;
+
+    foreach(session('cart') as $id => $details){
+        $totalQty += $details['qty'];
+    }
 @endphp
 <div class="basis-[70%] border border-gray-150 bg-white rounded-3xl p-10 flex flex-col gap-8">
-    <h1 class="font-semibold text-3xl">Cart ({{ count((array) session('cart')) }})</h1>
+    <h1 class="font-semibold text-3xl">Cart ({{ $totalQty }})</h1>
 
     <div x-data='cart'>
         @if (session('cart'))
