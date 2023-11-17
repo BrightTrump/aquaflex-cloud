@@ -1,13 +1,13 @@
 @php
     // use Illuminate\Support\Facades\Session;
     // Session::forget('cart');
-    
+
 @endphp
 <x-guest-layout :title="'Shop Now'">
     @include('components.header')
 
     <section class="">
-        <div class="grid grid-cols-4 xm:max-lx:grid-cols-2 mb-4 gap-4">
+        <div class="grid grid-cols-4 xm:max-lx:grid-cols-2 xs:max-xm:grid-cols-1 mb-4 gap-4">
             @foreach ($products as $product)
                 @foreach ($product->productItems as $productItem)
                     <div
