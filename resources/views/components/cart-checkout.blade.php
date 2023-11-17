@@ -19,7 +19,7 @@
             <span class="col-span-2 font-semibold text-3xl flex justify-end text-secondary">NGN
                 {{ $total}}</span>
         </div>
-        <input type="hidden" name="amount" value="{{$total}}">
+        <input type="hidden" name="amount" value="{{$total * 100}}">
 
         <button type="submit"
             class="flex items-center justify-center bg-primary py-6 rounded-xl text-2xl font-semibold text-white">Proceed

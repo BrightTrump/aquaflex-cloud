@@ -79,4 +79,4 @@
     </div>
 </div>
 
-@include('components.checkout')
+@include('components.cart-checkout')

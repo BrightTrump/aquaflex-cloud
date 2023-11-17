@@ -15,7 +15,11 @@ use Unicodeveloper\Paystack\Facades\Paystack;
 
 class PaymentController extends Controller
 {
-    protected $uniqueTransactionId = "AQFL" . Str::random(9);
+    protected $uniqueTransactionId;
+
+    public function __construct(){
+        $this->uniqueTransactionId = "AQFL" . Str::random(7);
+    }
 
     /**
      * Redirect the User to Paystack Payment Page
