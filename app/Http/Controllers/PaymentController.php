@@ -50,12 +50,19 @@ class PaymentController extends Controller
 
         if($data['status'] == 'success'){
             $order = Order::where('reference', $data['reference'])->first();
-            $order->status = OrderStatus::where('status', OrderStatusEnum::PENDING)->first()->id;
-            $order->payment_channel = $data['channel'];
-            $order->receipt_no      = $this->uniqueTransactionId;
-            $order->authorization_code = $data['authorization']['authorization_code'];
 
-            $order->save();
+            if ($order) {
+
+                $order->payment_channel = $data['channel'];
+                $order->receipt_no      = $this->uniqueTransactionId;
+                $order->authorization_code = $data['authorization']['authorization_code'];
+
+                $order->orderStatus()->associate(OrderStatus::where('status', OrderStatusEnum::PROCESSING)->first());
+
+                $order->save();
+            }
+
+
         }
         return Redirect::back()->withMessage(['msg'=> '','type'=> 'success']);
     }
