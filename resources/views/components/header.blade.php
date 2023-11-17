@@ -5,17 +5,20 @@
 
 @endphp
 <!-- ==================== Header Area (Start) ==================== -->
-<header>
+<header class="bg-white">
     <!-- ===== Header Area (Start) ===== -->
 
-    <div class="justify-between flex items-center py-3 px-16 h-[59px] border-b border-gray-150">
-        <a href="/" class="" aria-label="go to homepage" aria-current="page">
-            <div class="dng-logotype">
-                <img src="/assets/images/Logo/aquaflex-black.png" alt="Logo" class="w-[12rem]">
-            </div>
-        </a>
 
-        <nav class="dropdownmenu">
+    <div class="justify-between flex items-center py-3 px-16 h-[59px] border-b border-gray-150">
+        <div class="flex gap-10">
+            <i class="fas fa-bars text-4xl"></i>
+            <a href="/" class="" aria-label="go to homepage" aria-current="page">
+                <div class="dng-logotype">
+                    <img src="/assets/images/Logo/aquaflex-black.png" alt="Logo" class="w-[12rem]">
+                </div>
+            </a>
+        </div>
+        <nav class="dropdownmenu lg:flex hidden">
             <ul class="flex text-[16px] font-medium w-full h-full items-center">
                 <li><a href="/">Home</a></li>
                 <li><a href="">About<i class="fas fa-angle-down ml-3"></i></a>
@@ -32,7 +35,7 @@
         </nav>
 
         <ul class="flex items-center text-[16px] gap-5 font-medium">
-            <li class="account-nav-item position-relative flex-col-align-center mr-4">
+            <li class="xm:flex hidden account-nav-item position-relative flex-col-align-center mr-4">
                 <div class="cursor-pointer flex items-center gap-2 relative">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none"
@@ -42,24 +45,32 @@
                                 stroke="#171725" stroke-width="2" stroke-linecap="round"></path>
                         </svg>
                     </span>
-                    <span class="">Account
+                    <span class="">
+
                         @if (!Auth::check())
+                            Account
                             <ul id="submenu" class="w-[20rem] border-l-4 border-primary drop-shadow-xl">
                                 <li><a href="/login">Login</a></li>
                                 <li> <a href="/register">Create Acccount</a></li>
                             </ul>
                         @endif
                         @if (Auth::check())
-                            <ul id="submenu" class="font-medium border border-t-gray-150 border-b-gray-150 border-r-gray-150 text-gray-600  text-[14px] w-[20rem] border-l-4 border-primary drop-shadow-xl">
-                                <li><a href="/login" class="hover:text-[var(--primary-color)]">My Order</a></li>
-                                <li> <a href="/dashboard" class="hover:text-[var(--primary-color)]">My Account</a></li>
-                                <li> <a href="/signup" class="hover:text-[var(--primary-color)]">Pending Reviews</a></li>
-                                <li> <a href="/signup" class="hover:text-[var(--primary-color)]">Favorites</a></li>
+                            <span class="font-semibold">Hi, {{ strtok(Auth::user()->name, ' ') }}</span><i
+                                class="fas fa-angle-down ml-3"></i>
+                            <ul id="submenu"
+                                class="font-medium border border-t-gray-150 border-b-gray-150 border-r-gray-150 text-gray-600  text-[14px] w-[20rem] border-l-4 border-primary drop-shadow-xl">
+                                <li> <a href="/dashboard">My Account</a></li>
+                                <li><a href="/login">My Order</a></li>
+                                <li> <a href="/signup">Pending Reviews</a>
+                                </li>
+                                <li> <a href="/signup">Favorites</a></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();" class="font-semibold hover:text-[var(--primary-color)]">Logout</a>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                        this.closest('form').submit();"
+                                            class="font-semibold hover:text-[var(--primary-color)]">Logout</a>
                                     </form>
                                 </li>
                             </ul>
@@ -90,12 +101,12 @@
                             <span
                                 class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
                                 @php $totalQty = 0 @endphp
-                                @foreach(session('cart') as $id => $details)
+                                @foreach (session('cart') as $id => $details)
                                     @php
                                         $totalQty += $details['qty'];
                                     @endphp
                                 @endforeach
-                                {{$totalQty}}
+                                {{ $totalQty }}
                             </span>
                         @endif
                         @if ($cartController->countQuantity() !== 0 && Auth::check())
@@ -110,6 +121,20 @@
             </li>
         </ul>
     </div>
+
+    {{-- Responsive NavBar --}}
+    {{-- <div class="lx:hidden flex items-center py-3 px-16 h-[59px] border-b border-gray-150">
+        <!-- Menu toggle -->
+        <div class="flex gap-10">
+            <i class="fas fa-bars text-4xl"></i>
+            <a href="/" class="" aria-label="go to homepage" aria-current="page">
+                <div class="dng-logotype">
+                    <img src="/assets/images/Logo/aquaflex-black.png" alt="Logo" class="w-[12rem]">
+                </div>
+            </a>
+        </div>
+
+    </div> --}}
 
     {{-- <div class="header">
         <div class="header-2">
