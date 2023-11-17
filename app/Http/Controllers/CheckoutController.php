@@ -21,15 +21,17 @@ use Unicodeveloper\Paystack\Facades\Paystack;
 class CheckoutController extends Controller
 {
     public function checkout(Request $request){
-        
+
         $data = [
-            'amount' => $request->input("amount") * 100 ,
+            'amount' => $request->input("amount") ,
             "reference" => Paystack::genTranxRef(),
             "email" => Auth::user()->email,
             "currency" => "NGN",
             "order_id" => 23456,
         ];
 
+
+        // Transfer the cartItem to orderLine
         // Place Order Here
         // Save the order to database
         $order = new Order([
@@ -42,8 +44,6 @@ class CheckoutController extends Controller
         $order->orderStatus()->associate(OrderStatus::where('status', OrderStatusEnum::PENDING)->first());
 
         $order->save();
-
-        // Transfer the cartItem to orderLine
 
         $cart      = Cart::where('user_id', Auth::user()->id)->first();
 
@@ -61,6 +61,8 @@ class CheckoutController extends Controller
 
             $orderLine->save();
         }
+
+        
 
         return Paystack::getAuthorizationUrl($data)->redirectNow();
         //return view("shop.checkout");
