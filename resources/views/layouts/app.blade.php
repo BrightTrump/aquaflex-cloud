@@ -10,37 +10,45 @@
 
     <title>{{ config('app.name', 'Laravel') }} | {{ $title }}</title>
 
-    <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/css/style.css'])
-    <link rel="stylesheet" href="/assets/css/user.css">
+   <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
+
+    <!-- Magnific-Popup (CSS) -->
+    <link rel="stylesheet" href="/vendors/magnific-popup/magnific-popup.css" />
+
+    <!-- Swiper (CSS) -->
+    <link rel="stylesheet" href="/vendors/swiper/swiper.css" />
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/user.css" />
+    <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="/assets/js/alpinejs.min.js"></script>
+
+
+    @if (config('app.env') != 'production')
+        @vite(['resources/css/app.css',])
+    @endif
+    @if (config('app.env') == 'production')
+        <link rel="stylesheet" href="/build/assets/style-41fa316a.css" />
+    @endif
 </head>
 
-<body x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
-$watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }">
-    <!-- ===== Preloader Start ===== -->
-    <div x-show="loaded" x-init="window.addEventListener('DOMContentLoaded', () => { setTimeout(() => loaded = false, 500) })"
-        class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black">
-        <div class="h-16 w-16 animate-spin rounded-full border-4 border-solid border-primary border-t-transparent">
-        </div>
-    </div>
+<body class="bg-gray-50">
 
-    <!-- ===== Preloader End ===== -->
-
+    @include('components.header')
     <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex h-screen overflow-hidden">
+    <div class="flex relative py-10 px-20">
 
         <!-- ===== Sidebar Start ===== -->
-        @include('components.side-bar')
+        @include('components.customer-side-bar')
         <!-- ===== Sidebar End ===== -->
 
         <!-- ===== Content Area Start ===== -->
-        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-            <!-- ===== Header Start ===== -->
-            @include('components.navigation')
+        <div class="relative">
 
-            <!-- ===== Header End ===== -->
 
             <!-- ===== Main Content Start ===== -->
             {{ $slot }}
@@ -49,12 +57,6 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         <!-- ===== Content Area End ===== -->
     </div>
     <!-- ===== Page Wrapper End ===== -->
-
-    @vite(['resources/js/bundle.js'])
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-        data-cf-beacon='{"rayId":"82047576dd0c66ac","version":"2023.10.0","r":1,"token":"67f7a278e3374824ae6dd92295d38f77","b":1}'
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
