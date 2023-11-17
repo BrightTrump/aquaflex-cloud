@@ -14,7 +14,12 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/webfont/css/general-sans.css" />
 
-    @vite(['resources/css/app.css'])
+    @if (config('app.env') != 'production')
+        @vite(['resources/css/app.css',])
+    @endif
+    @if (config('app.env') == 'production')
+        <link rel="stylesheet" href="/build/assets/style-e5487057.css" />
+    @endif
 </head>
 
 <body class="">
