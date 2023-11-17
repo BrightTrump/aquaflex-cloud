@@ -17,11 +17,14 @@ Route::delete('remove-from-cart/{id}', [CartController::class, 'destory'])->name
 Route::get('customer-id', [CartController::class, 'customerId']);
 
 
-// Checkout
 Route::middleware(['auth'])->group(function () {
+    // Checkout
     Route::post('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+
+    // Payment
+    Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
+    Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
+    Route::get('/payment/receipt', [PaymentController::class,'receipt']);
 });
 
-// Payment
-Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
-Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
+

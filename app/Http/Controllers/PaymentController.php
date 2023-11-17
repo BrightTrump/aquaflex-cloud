@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Illuminate\View\View;
 use App\Models\OrderStatus;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -60,10 +61,16 @@ class PaymentController extends Controller
                 $order->orderStatus()->associate(OrderStatus::where('status', OrderStatusEnum::PROCESSING)->first());
 
                 $order->save();
+
+                return redirect('/payment/receipt')->with('order', $order);
             }
 
-
         }
-        return Redirect::back()->withMessage(['msg'=> '','type'=> 'success']);
     }
+
+    public function receipt(): View
+    {
+        return view('shop.receipt');
+    }
+
 }
