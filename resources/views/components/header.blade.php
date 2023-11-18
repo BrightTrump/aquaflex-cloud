@@ -5,7 +5,7 @@
 
 @endphp
 <!-- ==================== Header Area (Start) ==================== -->
-<header class="bg-white sticky top-0">
+<header class="bg-white">
     <!-- ===== Header Area (Start) ===== -->
 
 
