@@ -9,9 +9,9 @@
     <!-- ===== Header Area (Start) ===== -->
 
 
-    <div class="justify-between flex items-center py-3 px-16 h-[59px] border-b border-gray-150">
+    <div class="justify-between flex items-center py-3 px-16 h-[70px] border-b border-gray-150">
         <div class="flex gap-10">
-            <i class="fas fa-bars text-4xl"></i>
+            <i class="lg:hidden fas fa-bars text-4xl"></i>
             <a href="/" class="" aria-label="go to homepage" aria-current="page">
                 <div class="dng-logotype">
                     <img src="/assets/images/Logo/aquaflex-black.png" alt="Logo" class="w-[12rem]">
