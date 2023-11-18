@@ -17,6 +17,9 @@
     :root{
         --primary-color: #00ccff;
     }
+    .header-area{
+        z-index: 9999;
+    }
     .dropdownmenu li {
         position: relative;
         height: 100%;
