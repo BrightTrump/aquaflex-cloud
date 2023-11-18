@@ -1145,6 +1145,10 @@ select {
   height: 5rem;
 }
 
+.h-\[70px\] {
+  height: 70px;
+}
+
 .h-\[82vh\] {
   height: 82vh;
 }
@@ -2411,6 +2415,10 @@ select {
 
 :root{
         --primary-color: #00ccff;
+    }
+
+.header-area{
+        z-index: 9999;
     }
 
 .dropdownmenu li {

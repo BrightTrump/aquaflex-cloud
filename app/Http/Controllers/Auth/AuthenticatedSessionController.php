@@ -37,8 +37,8 @@ class AuthenticatedSessionController extends Controller
             MigrateCartJob::dispatch(auth()->id())->onQueue('cart_migration');
         }
 
-        //return redirect()->intended(RouteServiceProvider::HOME);
-        return back();
+        return redirect()->intended(RouteServiceProvider::HOME);
+        
     }
 
     /**
