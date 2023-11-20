@@ -35,7 +35,7 @@
         @vite(['resources/css/app.css'])
     @endif
     @if (config('app.env') == 'production')
-        <link rel="stylesheet" href="/build/assets/style-f1cdc3bc.css" />
+        <link rel="stylesheet" href="/build/assets/style-cafcd65d.css" />
     @endif
 </head>
 
@@ -55,7 +55,7 @@
         <!-- ===== Sidebar End ===== -->
 
         <!-- ===== Content Area Start ===== -->
-        <div class="relative w-full flex flex-col gap-5">
+        <div class="relative w-full flex flex-col gap-8">
 
 
             <!-- ===== Main Content Start ===== -->
