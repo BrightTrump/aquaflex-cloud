@@ -39,7 +39,7 @@ class PaymentController extends Controller
 
     /**
      * Obtain Paystack payment information
-     * @return 
+     * @return
      */
     public function handleGatewayCallback()
     {
@@ -88,8 +88,12 @@ class PaymentController extends Controller
     private function clearCartItem(){
         // Clear all cartItem
         $cart     = Cart::where('user_id', Auth::user()->id)->first();
-        $cartItem = CartItem::where('cart_id', $cart->id)->get();
-        $cartItem->delete();
+
+        $cartItems = CartItem::where('cart_id', $cart->id)->get();
+
+        foreach ($cartItems as $cartItem) {
+            $cartItem->delete();
+        }
     }
 
 }
