@@ -39,7 +39,7 @@ class PaymentController extends Controller
 
     /**
      * Obtain Paystack payment information
-     * @return void
+     * @return 
      */
     public function handleGatewayCallback()
     {
@@ -64,21 +64,32 @@ class PaymentController extends Controller
 
                 $order->save();
 
-                // Clear all cartItem
-                $cart = Cart::where('user_id', Auth::user()->id)->first();
-                $cartItem = CartItem::where('cart_id', $cart->id)->get();
-                $cartItem->delete();
-
+                $this->clearCartItem();
 
                 return redirect('/payment/receipt')->with('order', $order);
             }
 
+        }
+        else{
+            $order = Order::where('reference', $data['reference'])->first();
+            $order->orderStatus()->associate(OrderStatus::where('status', OrderStatusEnum::CANCELED)->first());
+
+            $this->clearCartItem();
+
+            return redirect('/');
         }
     }
 
     public function receipt(): View
     {
         return view('shop.receipt');
+    }
+
+    private function clearCartItem(){
+        // Clear all cartItem
+        $cart     = Cart::where('user_id', Auth::user()->id)->first();
+        $cartItem = CartItem::where('cart_id', $cart->id)->get();
+        $cartItem->delete();
     }
 
 }
