@@ -1,7 +1,4 @@
 <x-guest-layout :title="'About Us'">
-
-    @include('components.header')
-
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">
         <div class="container">
@@ -609,6 +606,4 @@
         <!-- ========== Sponsors Area (End) ========== -->
     </section>
     <!-- ==================== About-Us Area (End) ==================== -->
-
-    @include('components.footer')
 </x-guest-layout>

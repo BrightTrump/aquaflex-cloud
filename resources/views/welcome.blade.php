@@ -1,11 +1,6 @@
 <x-guest-layout :title="__('Water & Blackcurrant Delivery Company')">
-    <!-- ==================== Scroll-Top Area (Start) ==================== -->
-    <a href="#" class="scroll-top">
-        <i class="fas fa-long-arrow-alt-up"></i>
-    </a>
-    <!-- ==================== Scroll-Top Area (End) ==================== -->
-
-    @include('components.header')
+    
+    
 
     <!-- ==================== Home-Slider Area (Start) ==================== -->
     <section class="home">
@@ -905,8 +900,6 @@
         </div>
     </section>
     <!-- ==================== Sponsors Area (End) ==================== -->
-
-    @include('components.footer')
 
     <!-- ==================== Loader Area (End) ==================== -->
     <!-- <div class="pre-loader">

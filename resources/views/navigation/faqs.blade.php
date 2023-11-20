@@ -1,5 +1,4 @@
 <x-guest-layout :title="'FAQs'">
-    @include('components.header')
 
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">
@@ -90,22 +89,5 @@
         </div>
     </section>
     <!-- ==================== Faqs Area (End) ==================== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @include('components.footer')
 
 </x-guest-layout>

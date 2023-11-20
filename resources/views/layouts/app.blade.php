@@ -32,7 +32,7 @@
         @vite(['resources/css/app.css',])
     @endif
     @if (config('app.env') == 'production')
-        <link rel="stylesheet" href="/build/assets/style-2a89d25d.css" />
+        <link rel="stylesheet" href="/build/assets/style-df337971.css" />
     @endif
 </head>
 
@@ -40,7 +40,7 @@
 
     @include('components.header')
     <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex relative py-10 px-20">
+    <div class="flex relative px-20 mt-[10rem]">
 
         <!-- ===== Sidebar Start ===== -->
         @include('components.customer-side-bar')
