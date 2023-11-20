@@ -12,7 +12,7 @@ class FinancialSummaryService
         $totalSales = 0;
 
         // Get all ready where status is 'processing'
-        $orders = Order::where('order_status_id', OrderStatus::where('status', OrderStatusEnum::PROCESSING)->first())->get();
+        $orders = Order::where('order_status_id', OrderStatus::where('status', OrderStatusEnum::PROCESSING)->first()->id)->get();
 
         foreach ($orders as $order) {
             $totalSales += $order->order_total;

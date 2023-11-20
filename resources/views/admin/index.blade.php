@@ -1,8 +1,8 @@
 <x-app-layout :title="'Management'">
     <div class="p-[3rem] flex bg-white w-full rounded-lg border border-gray-150">
         <div class="flex gap-3 flex-col">
-            <h1 class="text-5xl font-medium">Hello, {{ Auth::user()->name }} 👋</h1>
-            <h2 class="text-3xl">Welcome Back!</h2>
+            <h1 class="text-4xl font-medium">Hello, {{ Auth::user()->name }} 👋</h1>
+            <h2 class="text-2xl">Welcome Back!</h2>
         </div>
         <span class="font-medium text-xl absolute right-10 border border-sky-400 bg-sky-100 rounded-lg py-4 px-7">
             {{ Auth::user()->role }}
@@ -12,7 +12,7 @@
         <div class="flex items-center p-10 gap-10 w-fit bg-white rounded-lg border border-gray-150">
             <div class="flex flex-col gap-3">
                 <h1 class="text-2xl">Total Sells</h1>
-                <h2 class="text-3xl font-semibold tracking-tight">NGN {{$totalSale}}</h2>
+                <h2 class="text-3xl font-semibold tracking-tight">NGN @money($totalSale)</h2>
             </div>
             <span class="flex rounded-full border border-sky-300 h-24 w-24 justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="30.359" height="30.366"
                 viewBox="0 0 30.359 30.366">

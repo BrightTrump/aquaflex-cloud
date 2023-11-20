@@ -33,7 +33,7 @@
         @vite(['resources/css/app.css',])
     @endif
     @if (config('app.env') == 'production')
-        <link rel="stylesheet" href="/build/assets/style-df337971.css" />
+        <link rel="stylesheet" href="/build/assets/style-f1cdc3bc.css" />
     @endif
 </head>
 
