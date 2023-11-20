@@ -1,5 +1,5 @@
 <x-guest-layout :title="'Team'">
-    @include('components.header')
+
 
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">
@@ -100,7 +100,5 @@
         </div>
     </section>
     <!-- ==================== Team Area (End) ==================== -->
-
-    @include('components.footer')
 
 </x-guest-layout>

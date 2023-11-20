@@ -9,7 +9,7 @@
     <!-- ===== Header Area (Start) ===== -->
 
 
-    <div class="justify-between flex items-center py-3 px-16 h-[70px] border-b border-gray-150">
+    <div class="justify-between flex items-center px-16 h-[70px] border-b border-gray-150">
         <div class="flex gap-10">
             <i class="lg:hidden fas fa-bars text-4xl"></i>
             <a href="/" class="" aria-label="go to homepage" aria-current="page">
@@ -18,17 +18,18 @@
                 </div>
             </a>
         </div>
-        <nav class="dropdownmenu lg:flex hidden">
+        <nav class="dropdownmenu lg:flex hidden h-full">
             <ul class="flex text-[16px] font-medium w-full h-full items-center">
-                <li><a href="/">Home</a></li>
-                <li><a href="">About<i class="fas fa-angle-down ml-3"></i></a>
+                <x-nav-link :active="request()->routeIs('')"><a href="/">Home</a></x-nav-link>
+                <x-nav-link :active="request()->routeIs('about')">
+                    <a href="">About<i class="fas fa-angle-down ml-3"></i></a>
                     <ul id="submenu" class="w-[14rem] border-l-4 border-primary drop-shadow-xl">
                         <li><a href="/about">About Us</a></li>
                         <li> <a href="/team">Team</a></li>
                         <li><a href="/faqs">FAQs</a></li>
                     </ul>
-                </li>
-                <li><a href="/services">Services</a></li>
+                </x-nav-link>
+                <x-nav-link :active="request()->routeIs('services')"><a href="/services">Services</a></x-nav-link>
                 <li><a href="/products">Shop Now</a></li>
                 <li><a class="" href="/contact">Contact Us</a></li>
             </ul>

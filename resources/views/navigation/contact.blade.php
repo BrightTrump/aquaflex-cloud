@@ -1,5 +1,4 @@
-<x-guest-layout>
-    @include('components.header')
+<x-guest-layout :title="'Contact Us'">
 
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">
@@ -82,6 +81,4 @@
         <!-- ========== Contact Form (End) ========== -->
     </section>
     <!-- ==================== Contact Area (End) ==================== -->
-
-    @include('components.footer')
 </x-guest-layout>

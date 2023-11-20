@@ -3,7 +3,7 @@
 @endphp
 <x-guest-layout :title="'Cart'">
     @include('components.header')
-    <section class="px-30 flex gap-20 justify-between bg-gray-50">
+    <section class="mt-[70px] px-30 flex gap-20 justify-between bg-gray-50">
         @if (session('cart') && !Auth::check())
             @include('components.session-cart')
         @endif
@@ -24,7 +24,6 @@
 
     </section>
     <!-- ==================== Cart Area (End) ==================== -->
-    @include('components.footer')
     @include('components.cart-delete-alert')
 
 </x-guest-layout>

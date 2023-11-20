@@ -1,5 +1,4 @@
 <x-guest-layout :title="'Services'">
-    @include('components.header')
     <!-- ==================== Page-Title (Start) ==================== -->
     <div class="page-title">
         <div class="container">
@@ -120,8 +119,5 @@
         </div>
     </section>
     <!-- ==================== Services Area (End) ==================== -->
-
-
-    @include('components.footer')
 
 </x-guest-layout>

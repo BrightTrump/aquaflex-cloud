@@ -1029,6 +1029,14 @@ select {
   margin-top: 2rem;
 }
 
+.mt-\[10rem\] {
+  margin-top: 10rem;
+}
+
+.mt-\[70px\] {
+  margin-top: 70px;
+}
+
 .block {
   display: block;
 }
@@ -1121,20 +1129,16 @@ select {
   height: 2rem;
 }
 
-.h-\[13rem\] {
-  height: 13rem;
+.h-\[10rem\] {
+  height: 10rem;
 }
 
-.h-\[17rem\] {
-  height: 17rem;
+.h-\[24rem\] {
+  height: 24rem;
 }
 
 .h-\[4\.5rem\] {
   height: 4.5rem;
-}
-
-.h-\[5\.5rem\] {
-  height: 5.5rem;
 }
 
 .h-\[59px\] {
@@ -1276,6 +1280,10 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.min-w-\[7rem\] {
+  min-width: 7rem;
 }
 
 .max-w-6xl {
@@ -1432,10 +1440,6 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -1566,10 +1570,6 @@ select {
   border-radius: 1.5rem;
 }
 
-.rounded-\[1rem\] {
-  border-radius: 1rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1667,11 +1667,6 @@ select {
   border-color: rgb(0 44 143 / var(--tw-border-opacity));
 }
 
-.border-sky-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(125 211 252 / var(--tw-border-opacity));
-}
-
 .border-transparent {
   border-color: transparent;
 }
@@ -1684,6 +1679,11 @@ select {
 .border-b-gray-150 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(233 236 238 / var(--tw-border-opacity));
+}
+
+.border-b-primary {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(0 204 255 / var(--tw-border-opacity));
 }
 
 .border-b-secondary {
@@ -1766,11 +1766,6 @@ select {
   background-color: rgb(0 44 143 / var(--tw-bg-opacity));
 }
 
-.bg-sky-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 249 255 / var(--tw-bg-opacity));
-}
-
 .bg-transparent {
   background-color: transparent;
 }
@@ -1851,11 +1846,6 @@ select {
   padding: 2rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1909,11 +1899,6 @@ select {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .py-16 {
@@ -2006,10 +1991,6 @@ select {
   padding-right: 2rem;
 }
 
-.pt-1 {
-  padding-top: 0.25rem;
-}
-
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -2061,16 +2042,8 @@ select {
   font-size: 1.65rem;
 }
 
-.text-\[10px\] {
-  font-size: 10px;
-}
-
 .text-\[12px\] {
   font-size: 12px;
-}
-
-.text-\[13px\] {
-  font-size: 13px;
 }
 
 .text-\[14px\] {
@@ -2095,6 +2068,10 @@ select {
 
 .text-\[22px\] {
   font-size: 22px;
+}
+
+.text-\[26px\] {
+  font-size: 26px;
 }
 
 .text-\[50px\] {
@@ -2439,7 +2416,6 @@ select {
 #submenu {
         /* border: 1px solid #e9ecee; */
         background-color: #fff;
-        border-radius: 4px;
         left: 0;
         opacity: 0;
         position: absolute;
@@ -2450,7 +2426,7 @@ select {
 
 li:hover ul#submenu {
         opacity: 1;
-        top: 35px;
+        top:60px;
         visibility: visible;
     }
 
@@ -2458,7 +2434,7 @@ li:hover ul#submenu {
         padding: 10px 20px;
     }
 
-#submenu li:hover a {
+#submenu li a:hover {
         color: var(--primary-color);
     }
 
@@ -2482,6 +2458,48 @@ li:hover ul#submenu {
 .customer-sidebar ul li a:hover{
         background: #f3f4f6;
     }
+
+.after\:absolute::after {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.after\:bottom-0::after {
+  content: var(--tw-content);
+  bottom: 0px;
+}
+
+.after\:left-0::after {
+  content: var(--tw-content);
+  left: 0px;
+}
+
+.after\:h-2::after {
+  content: var(--tw-content);
+  height: 0.5rem;
+}
+
+.after\:w-full::after {
+  content: var(--tw-content);
+  width: 100%;
+}
+
+.after\:rounded-t-lg::after {
+  content: var(--tw-content);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.after\:bg-primary::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 204 255 / var(--tw-bg-opacity));
+}
+
+.after\:content-\[\'\'\]::after {
+  --tw-content: '';
+  content: var(--tw-content);
+}
 
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
@@ -2534,11 +2552,6 @@ li:hover ul#submenu {
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.hover\:text-gray-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-800:hover {
@@ -2608,11 +2621,6 @@ li:hover ul#submenu {
 .focus\:text-gray-500:focus {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.focus\:text-gray-700:focus {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .focus\:text-gray-800:focus {
@@ -2808,11 +2816,6 @@ li:hover ul#submenu {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 
-  .dark\:hover\:border-gray-700:hover {
-    --tw-border-opacity: 1;
-    border-color: rgb(55 65 81 / var(--tw-border-opacity));
-  }
-
   .dark\:hover\:bg-gray-700:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
@@ -2847,11 +2850,6 @@ li:hover ul#submenu {
     color: rgb(229 231 235 / var(--tw-text-opacity));
   }
 
-  .dark\:hover\:text-gray-300:hover {
-    --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity));
-  }
-
   .dark\:hover\:text-gray-400:hover {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -2860,11 +2858,6 @@ li:hover ul#submenu {
   .dark\:focus\:border-gray-600:focus {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
-  }
-
-  .dark\:focus\:border-gray-700:focus {
-    --tw-border-opacity: 1;
-    border-color: rgb(55 65 81 / var(--tw-border-opacity));
   }
 
   .dark\:focus\:border-indigo-300:focus {
@@ -2905,11 +2898,6 @@ li:hover ul#submenu {
   .dark\:focus\:text-gray-200:focus {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity));
-  }
-
-  .dark\:focus\:text-gray-300:focus {
-    --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 
   .dark\:focus\:text-gray-400:focus {
