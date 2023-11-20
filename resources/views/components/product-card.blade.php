@@ -18,7 +18,7 @@
 <div class="p-8 text-[20px] font-semibold flex flex-col gap-2 justify-between h-full">
 
     <div class=" flex flex-col items-cente h-[10rem]">
-        <h1 class="text-[26px] text-secondary">{{ $product->name }}</h1>
+        <h1 class="text-[26px] text-secondary leading-none">{{ $product->name }}</h1>
         <h2 class="text-primary text-4xl">
             ₦{{ $productItem->price }}
         </h2>
