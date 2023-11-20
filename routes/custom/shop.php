@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ProductsController;
 
 // Product Route
 Route::get('products', [ProductsController::class, 'index']);
@@ -19,7 +20,7 @@ Route::get('customer-id', [CartController::class, 'customerId']);
 
 Route::middleware(['auth'])->group(function () {
     // Checkout
-    Route::post('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+    Route::post('/checkout', [OrderController::class, 'placeOrder'])->name('checkout');
 
     // Payment
     Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');

@@ -60,7 +60,7 @@
                                 class="fas fa-angle-down ml-3"></i>
                             <ul id="submenu"
                                 class="font-medium border border-t-gray-150 border-b-gray-150 border-r-gray-150 text-gray-600  text-[14px] w-[20rem] border-l-4 border-primary drop-shadow-xl">
-                                <li> <a href="/dashboard">My Account</a></li>
+                                <li> <a href="/customer/account">My Account</a></li>
                                 <li><a href="/login">My Order</a></li>
                                 <li> <a href="/signup">Pending Reviews</a>
                                 </li>

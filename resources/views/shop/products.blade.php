@@ -5,12 +5,9 @@
 @endphp
 <x-guest-layout :title="'Shop Now'">
     <section class="mt-[70px] bg-gray-50">
-        <div class="grid grid-cols-3 xm:max-lx:grid-cols-2 xs:max-xm:grid-cols-1 mb-4 gap-14">
-            @foreach ($products as $product)
-                @foreach ($product->productItems as $productItem)
-                    @include('components.product-card')
-                @endforeach
-            @endforeach
+
+        @includeWhen($products, 'components.product-card')
+
         </div>
 
         @if(count($products) == 0)

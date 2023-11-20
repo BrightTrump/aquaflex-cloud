@@ -1,4 +1,7 @@
 @props(['title'])
+@php
+    use App\Enums\RoleEnum;
+@endphp
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -10,7 +13,7 @@
 
     <title>{{ config('app.name', 'Laravel') }} | {{ $title }}</title>
 
-   <!-- Font-Awesome (CSS) -->
+    <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
 
     <!-- Magnific-Popup (CSS) -->
@@ -29,7 +32,7 @@
 
 
     @if (config('app.env') != 'production')
-        @vite(['resources/css/app.css',])
+        @vite(['resources/css/app.css'])
     @endif
     @if (config('app.env') == 'production')
         <link rel="stylesheet" href="/build/assets/style-df337971.css" />
@@ -40,14 +43,19 @@
 
     @include('components.header')
     <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex relative px-20 mt-[10rem]">
-
+    <div class="flex gap-10 relative px-20 mt-[9rem] w-full">
         <!-- ===== Sidebar Start ===== -->
-        @include('components.customer-side-bar')
+
+        @includeWhen(Auth::user()->role == RoleEnum::USER,
+            'components.sidebar.customer-sidebar')
+
+        @includeWhen(Auth::user()->role == RoleEnum::ADMIN || Auth::user()->role == RoleEnum::SALE_MANAGER, 'components.sidebar.admin-sidebar')
+
+
         <!-- ===== Sidebar End ===== -->
 
         <!-- ===== Content Area Start ===== -->
-        <div class="relative">
+        <div class="relative w-full flex flex-col gap-5">
 
 
             <!-- ===== Main Content Start ===== -->

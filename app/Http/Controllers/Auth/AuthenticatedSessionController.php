@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\RoleEnum;
 use Illuminate\View\View;
 use App\Models\ProductItem;
 use App\Jobs\MigrateCartJob;
@@ -37,8 +38,11 @@ class AuthenticatedSessionController extends Controller
             MigrateCartJob::dispatch(auth()->id())->onQueue('cart_migration');
         }
 
+        if(Auth::user()->role == RoleEnum::ADMIN){
+            return redirect('/management');
+        }
         return redirect()->intended(RouteServiceProvider::HOME);
-        
+
     }
 
     /**
