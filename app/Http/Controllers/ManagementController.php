@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Order;
+use App\Enums\RoleEnum;
 use App\Models\Product;
 use Illuminate\View\View;
 use App\Models\OrderStatus;
@@ -20,7 +22,11 @@ class ManagementController extends Controller
     }
     public function index(): View
     {
-        return view('admin.index', ['totalSale' => $this->financialSummaryService->getTotalSales()]);
+        return view('admin.index', [
+            'totalSale' => $this->financialSummaryService->getTotalSales(),
+            'totalOrder' => $this->financialSummaryService->getTotalOrder(),
+            'customer' => User::where('role', RoleEnum::USER)->get()
+        ]);
     }
 
     public function products(): View
