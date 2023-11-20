@@ -52,6 +52,6 @@ class RegisteredUserController extends Controller
             MigrateCartJob::dispatch(auth()->id())->onQueue('cart_migration');
         }
 
-        return back();
+        return redirect('/products');
     }
 }

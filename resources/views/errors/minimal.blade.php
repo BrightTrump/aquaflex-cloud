@@ -26,7 +26,7 @@
     @include('components.header')
 
     <!-- ====== Error Section Start -->
-    <section class="relative z-10 py-[120px] min-h-[91vh] bg-gray-50 flex  justify-center">
+    <section class="relative z-10 py-[120px] min-h-[100dvh] bg-gray-50 flex  justify-center items-center">
         <div class="container mx-auto">
             <div class="-mx-4 flex">
                 <div class="w-full px-4">

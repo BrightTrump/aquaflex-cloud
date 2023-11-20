@@ -1,7 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Services;
 
+use App\Enums\OrderStatusEnum;
+use App\Models\ShippingMethod;
+use App\Enums\ShippingMethodEnum;
+use Illuminate\Support\Facades\Auth;
+use Unicodeveloper\Paystack\Facades\Paystack;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Address;
@@ -10,20 +15,12 @@ use App\Models\OrderLine;
 use App\Models\OrderStatus;
 use App\Models\ProductItem;
 use App\Models\UserAddress;
-use Dotenv\Store\File\Paths;
-use Illuminate\Http\Request;
-use App\Enums\OrderStatusEnum;
-use App\Models\ShippingMethod;
-use App\Enums\ShippingMethodEnum;
-use Illuminate\Support\Facades\Auth;
-use Unicodeveloper\Paystack\Facades\Paystack;
 
-class CheckoutController extends Controller
+class OrderService
 {
-    public function checkout(Request $request){
-
+    public function placeOrder($request){
         $data = [
-            'amount' => $request->input("amount") ,
+            'amount' => $request->input("amount"),
             "reference" => Paystack::genTranxRef(),
             "email" => Auth::user()->email,
             "currency" => "NGN",
@@ -45,12 +42,12 @@ class CheckoutController extends Controller
 
         $order->save();
 
-        $cart      = Cart::where('user_id', Auth::user()->id)->first();
+        $cart = Cart::where('user_id', Auth::user()->id)->first();
 
         $cartItems = CartItem::where('cart_id', $cart->id)->with('productItem')->get();
 
         // Store individual cartItem in orderLine
-        foreach($cartItems as $cartItem){
+        foreach ($cartItems as $cartItem) {
             $orderLine = new OrderLine([
                 'qty' => $cartItem->qty,
                 'price' => $cartItem->productItem->price * $cartItem->qty,
@@ -61,10 +58,6 @@ class CheckoutController extends Controller
 
             $orderLine->save();
         }
-
-        
-
         return Paystack::getAuthorizationUrl($data)->redirectNow();
-        //return view("shop.checkout");
     }
 }

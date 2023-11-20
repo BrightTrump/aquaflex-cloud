@@ -63,3 +63,4 @@ Route::middleware(['auth', 'isAdminOrSaleManager'])->group(function () {
 require __DIR__ . '/auth.php';
 require __DIR__ . '/custom/shop.php';
 require __DIR__ . '/custom/customer.php';
+require __DIR__ . '/custom/admin.php';
