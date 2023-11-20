@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Order;
+use App\Models\CartItem;
 use Illuminate\View\View;
 use App\Models\OrderStatus;
 use Illuminate\Support\Str;
@@ -61,6 +63,12 @@ class PaymentController extends Controller
                 $order->orderStatus()->associate(OrderStatus::where('status', OrderStatusEnum::PROCESSING)->first());
 
                 $order->save();
+
+                // Clear all cartItem
+                $cart = Cart::where('user_id', Auth::user()->id)->first();
+                $cartItem = CartItem::where('cart_id', $cart->id)->get();
+                $cartItem->delete();
+
 
                 return redirect('/payment/receipt')->with('order', $order);
             }
