@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum Category: string
+enum CategoryEnum : string
 {
     case WATER = 'water';
     case DRINK = 'drink';
