@@ -15,7 +15,10 @@ class FinancialSummaryService
 
     public function getTotalOrder()
     {
-        return $this->getOrderSummaryWithStatus(OrderStatusEnum::PENDING);
+        $totalOrder = 0;
+        $totalOrder += $this->getOrderSummaryWithStatus(OrderStatusEnum::PENDING);
+        $totalOrder += $this->getOrderSummaryWithStatus(OrderStatusEnum::PROCESSING);
+        return $totalOrder;
     }
 
     private function getOrderSummaryWithStatus(OrderStatusEnum $orderStatusEnum)
