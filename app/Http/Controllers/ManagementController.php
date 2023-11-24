@@ -25,7 +25,8 @@ class ManagementController extends Controller
         return view('admin.index', [
             'totalSale' => $this->financialSummaryService->getTotalSales(),
             'totalOrder' => $this->financialSummaryService->getTotalOrder(),
-            'customer' => User::where('role', RoleEnum::USER)->get()
+            'customer' => User::where('role', RoleEnum::USER)->get(),
+            'orders' => Order::with('user', 'orderLine.productItem', 'orderStatus')->latest()->get()
         ]);
     }
 

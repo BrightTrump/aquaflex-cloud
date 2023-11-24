@@ -76,4 +76,13 @@
         background: #f3f4f6;
     }
 
+    /* Admin Dashboard */
+    .order_table thead tr th{
+        display: flex;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 0 10px;
+        align-items: center;
+    }
+
 }

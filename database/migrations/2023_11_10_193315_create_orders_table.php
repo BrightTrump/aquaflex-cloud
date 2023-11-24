@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamp('order_date');
             $table->string('payment_channel')->nullable();
-            $table->string('receipt_no')->nullable();
+            $table->string('order_id');
             $table->string('reference');
             $table->string('authorization_code')->nullable();
             $table->foreignId('shipping_address')->constrained('addresses');

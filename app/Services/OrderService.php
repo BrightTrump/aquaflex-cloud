@@ -15,6 +15,7 @@ use App\Models\OrderLine;
 use App\Models\OrderStatus;
 use App\Models\ProductItem;
 use App\Models\UserAddress;
+use Illuminate\Support\Str;
 
 class OrderService
 {
@@ -24,7 +25,7 @@ class OrderService
             "reference" => Paystack::genTranxRef(),
             "email" => Auth::user()->email,
             "currency" => "NGN",
-            "order_id" => 23456,
+            "order_id" => "AQFL" . Str::random(7),
         ];
 
 
@@ -34,6 +35,7 @@ class OrderService
         $order = new Order([
             'reference' => $data['reference'],
             'order_total' => $request->input('amount'),
+            'order_id' => $data['order_id'],
         ]);
         $order->user()->associate(Auth::user());
         $order->shippingAddress()->associate(Address::findOrFail(UserAddress::where("user_id", Auth::user()->id)->first()->address_id));

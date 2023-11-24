@@ -73,6 +73,13 @@ class ProductsController extends Controller
     }
 
     /**
+     * Update a specified product
+     */
+    public function update(Request $request){
+        
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)

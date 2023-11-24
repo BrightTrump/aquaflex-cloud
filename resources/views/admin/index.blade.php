@@ -74,4 +74,7 @@
             </span>
         </div>
     </div>
+    <div class="p-[3rem] flex bg-white w-full">
+        @include('components.order-card')
+    </div>
 </x-app-layout>

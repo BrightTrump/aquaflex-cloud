@@ -13,7 +13,8 @@ class Order extends Model
 
     protected $fillable = [
         'reference',
-        'order_total'
+        'order_total',
+        'order_id',
     ];
 
     public function shippingAddress(): BelongsTo
