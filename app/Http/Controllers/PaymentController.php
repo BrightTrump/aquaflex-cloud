@@ -7,7 +7,6 @@ use App\Models\Order;
 use App\Models\CartItem;
 use Illuminate\View\View;
 use App\Models\OrderStatus;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Enums\OrderStatusEnum;
 use Illuminate\Support\Facades\Log;
@@ -18,11 +17,6 @@ use Unicodeveloper\Paystack\Facades\Paystack;
 
 class PaymentController extends Controller
 {
-    protected $uniqueTransactionId;
-
-    public function __construct(){
-        $this->uniqueTransactionId = "AQFL" . Str::random(7);
-    }
 
     /**
      * Redirect the User to Paystack Payment Page
@@ -57,9 +51,7 @@ class PaymentController extends Controller
             if ($order) {
 
                 $order->payment_channel = $data['channel'];
-                $order->receipt_no      = $this->uniqueTransactionId;
                 $order->authorization_code = $data['authorization']['authorization_code'];
-
                 $order->orderStatus()->associate(OrderStatus::where('status', OrderStatusEnum::PROCESSING)->first());
 
                 $order->save();
