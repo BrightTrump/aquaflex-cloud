@@ -1105,6 +1105,10 @@ select {
   height: 0.625rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .h-24 {
   height: 6rem;
 }
@@ -1452,6 +1456,10 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1718,11 +1726,6 @@ select {
   border-bottom-color: rgb(0 204 255 / var(--tw-border-opacity));
 }
 
-.border-b-secondary {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(0 44 143 / var(--tw-border-opacity));
-}
-
 .border-r-gray-150 {
   --tw-border-opacity: 1;
   border-right-color: rgb(233 236 238 / var(--tw-border-opacity));
@@ -1756,6 +1759,11 @@ select {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
@@ -1940,6 +1948,11 @@ select {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .py-16 {
@@ -2506,6 +2519,16 @@ li:hover ul#submenu {
 
 .customer-sidebar ul li a:hover{
         background: #f3f4f6;
+    }
+
+/* Admin Dashboard */
+
+.order_table thead tr th{
+        display: flex;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 0 10px;
+        align-items: center;
     }
 
 .after\:absolute::after {
