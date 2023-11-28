@@ -11,11 +11,17 @@ export default {
 
     theme: {
         extend: {
+            backgroundImage: {
+                'login': "url({{ asset('/assets/images/login-background.jpg') }})",
+            },
             fontFamily: {
                 sans: ['GeneralSans-Variable', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                primary: '#00ccff',
+                //primary: '#00ccff',
+                primary: {
+                    "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a", "950": "#172554"
+                },
                 secondary: '#002c8f',
                 'gray-350': '#C6C6C7',
                 'gray-150': '#e9ecee',

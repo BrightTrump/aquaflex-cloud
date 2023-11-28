@@ -46,10 +46,10 @@
     <div class="flex gap-10 relative px-20 mt-[9rem] w-full">
         <!-- ===== Sidebar Start ===== -->
 
-        @includeWhen(Auth::user()->role == RoleEnum::USER,
-            'components.sidebar.customer-sidebar')
+        @includeWhen(Auth::user()->role == RoleEnum::USER, 'components.sidebar.customer-sidebar')
 
-        @includeWhen(Auth::user()->role == RoleEnum::ADMIN || Auth::user()->role == RoleEnum::SALE_MANAGER, 'components.sidebar.admin-sidebar')
+        @includeWhen(Auth::user()->role == RoleEnum::ADMIN || Auth::user()->role == RoleEnum::SALE_MANAGER,
+            'components.sidebar.admin-sidebar')
 
 
         <!-- ===== Sidebar End ===== -->

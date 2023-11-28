@@ -9,7 +9,7 @@ class CustomerController extends Controller
 {
     public function account(): View
     {
-        return view("customer.account");
+        return view("customer.account", ['user' => auth()->user()]);
     }
 
     public function orders(): View

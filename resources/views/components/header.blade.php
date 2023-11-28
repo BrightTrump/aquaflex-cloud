@@ -100,7 +100,7 @@
                         </svg>
                         @if (session('cart'))
                             <span
-                                class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
+                                class="bg-primary-500 h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
                                 @php $totalQty = 0 @endphp
                                 @foreach (session('cart') as $id => $details)
                                     @php
