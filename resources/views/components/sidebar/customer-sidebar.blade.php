@@ -1,5 +1,5 @@
-<aside class="lx:flex hidden basis-[300px] h-[82vh] bg-white border border-gray-150 rounded-lg customer-sidebar sticky top-0 ">
-    <ul class="w-full">
+<aside class="lx:flex flex-col hidden basis-[350px] h-[82vh] bg-white border border-gray-150 rounded-lg customer-sidebar sticky top-0 ">
+    <ul class="w-full border-">
         <li>
             <a href="/customer/account">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" class="dng-icon"

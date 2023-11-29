@@ -19,7 +19,7 @@
                 <h1 class="font-semibold text-3xl flex justify-between w-full">Edit Profile
                 </h1>
 
-                <div class="grid grid-cols-2 gap-10">
+                <div class="grid grid-cols-2 xs:max-sm:grid-cols-1 gap-10">
                     <div class="flex flex-col gap-5">
                         <label class="text-2xl">Full Name</label>
                         <input type="text" name="name" value="{{ old('name', $user->name) }}" required

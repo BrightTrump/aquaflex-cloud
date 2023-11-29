@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('address_line2')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
-            $table->string('postal_code')->nullable();
-            $table->string('country')->nullable();
+            //$table->string('postal_code')->nullable();
+            $table->string('lga')->nullable();
+            $table->string('country')->default('Nigeria');
             $table->timestamps();
         });
     }

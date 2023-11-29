@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Auth\PasswordController;
@@ -11,5 +12,11 @@ Route::middleware(['auth', 'verified','isUser'])->prefix('customer')->group(func
     Route::get('/edit', [ProfileController::class, 'edit'])->name('edit.profile');
 
     Route::get('/update-password', [PasswordController::class, 'edit']);
+
+    // Address
+    Route::get('/address', [AddressController::class, 'addressBook']);
+    Route::get('/address/add', [AddressController::class, 'addAddress']);
+    Route::get('/address/edit', [AddressController::class, 'edit'])->name('address.edit');
+    Route::post('/address/store', [AddressController::class, 'store'])->name('address.store');
 });
 
