@@ -21,7 +21,8 @@ class AddressFactory extends Factory
             'address_line2' => $this->faker->secondaryAddress,
             'city' => $this->faker->city,
             'state' => $this->faker->state,
-            'postal_code' => $this->faker->postcode,
+            //'postal_code' => $this->faker->postcode,
+            'lga' => $this->faker->randomElement(['Ughelli North', 'Ughelli South', 'Uvwie', 'Warri West' ]),
             'country' => $this->faker->country,
         ];
     }

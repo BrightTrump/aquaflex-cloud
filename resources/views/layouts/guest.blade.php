@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title' => ''])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -30,7 +30,7 @@
 
 
     @if (config('app.env') != 'production')
-        @vite(['resources/css/app.css',])
+        @vite(['resources/css/app.css'])
     @endif
     @if (config('app.env') == 'production')
         <link rel="stylesheet" href="/build/assets/style-1b6698d3.css" />

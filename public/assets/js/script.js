@@ -96,5 +96,12 @@ document.addEventListener('alpine:init', () => {
             }
         }
     }))
+
+    Alpine.data('toast', () =>({
+        show: true,
+        hide() {
+            this.show = !this.show;
+        }
+    }))
 })
 

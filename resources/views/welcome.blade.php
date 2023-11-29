@@ -1,6 +1,6 @@
-<x-guest-layout :title="__('Water & Blackcurrant Delivery Company')">
-    
-    
+<x-guest-layout title="Water & Blackcurrant Delivery Company">
+
+
 
     <!-- ==================== Home-Slider Area (Start) ==================== -->
     <section class="home">

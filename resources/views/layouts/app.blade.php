@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title' => ''])
 @php
     use App\Enums\RoleEnum;
 @endphp
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} | {{ $title }}</title>
+    <title>{{ $title }} | {{ config('app.name', 'Laravel') }} </title>
 
     <!-- Font-Awesome (CSS) -->
     <link rel="stylesheet" href="/vendors/font-awesome/css/all.css" />
@@ -43,15 +43,13 @@
 
     @include('components.header')
     <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex gap-10 relative px-20 mt-[9rem] w-full">
+    <div class="flex gap-10 relative px-20 mt-[9rem] w-full xs:max-sm:px-6 xs:max-sm:mt-[10rem]">
+
         <!-- ===== Sidebar Start ===== -->
+        @includeWhen(Auth::user()->role == RoleEnum::USER, 'components.sidebar.customer-sidebar')
 
-        @includeWhen(Auth::user()->role == RoleEnum::USER,
-            'components.sidebar.customer-sidebar')
-
-        @includeWhen(Auth::user()->role == RoleEnum::ADMIN || Auth::user()->role == RoleEnum::SALE_MANAGER, 'components.sidebar.admin-sidebar')
-
-
+        @includeWhen(Auth::user()->role == RoleEnum::ADMIN || Auth::user()->role == RoleEnum::SALE_MANAGER,
+            'components.sidebar.admin-sidebar')
         <!-- ===== Sidebar End ===== -->
 
         <!-- ===== Content Area Start ===== -->

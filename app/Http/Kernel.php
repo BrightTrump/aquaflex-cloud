@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'isSaleManager' => \App\Http\Middleware\SaleManagerMiddlewware::class,
         'isAdminOrSaleManager' => \App\Http\Middleware\AdminOrSaleManagerMiddleware::class,
         'isUser' => \App\Http\Middleware\UserMiddleware::class,
+        'isProfileUpdated' => \App\Http\Middleware\UpdateProfileMiddleware::class,
     ];
 }

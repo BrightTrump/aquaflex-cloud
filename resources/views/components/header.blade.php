@@ -54,9 +54,8 @@
                                 <li><a href="/login">Login</a></li>
                                 <li> <a href="/register">Create Acccount</a></li>
                             </ul>
-                        @endif
-                        @if (Auth::check())
-                            <span class="font-semibold">Hi, {{ strtok(Auth::user()->name, ' ') }}</span><i
+                        @else
+                            <span class="font-semibold capitalize">Hi, {{ strtok(Auth::user()->name, ' ') }}</span><i
                                 class="fas fa-angle-down ml-3"></i>
                             <ul id="submenu"
                                 class="font-medium border border-t-gray-150 border-b-gray-150 border-r-gray-150 text-gray-600  text-[14px] w-[20rem] border-l-4 border-primary drop-shadow-xl">
@@ -100,7 +99,7 @@
                         </svg>
                         @if (session('cart'))
                             <span
-                                class="bg-primary h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
+                                class="bg-primary-500 h-7 w-7 flex text-[12px] absolute font-semibold justify-center items-center -right-2 top-0 rounded-full text-white">
                                 @php $totalQty = 0 @endphp
                                 @foreach (session('cart') as $id => $details)
                                     @php
