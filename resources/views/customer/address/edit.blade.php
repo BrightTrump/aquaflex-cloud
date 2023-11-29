@@ -23,7 +23,7 @@
                     <div class="flex flex-col gap-5">
                         <label class="text-2xl">Full Name</label>
                         <input type="text" name="name" value="{{ old('name', $user->name) }}" required
-                            class="h-20 bg-gray-50 rounded flex items-center px-6 font-medium text-[16px]" />
+                            class="capitalize h-20 bg-gray-50 rounded flex items-center px-6 font-medium text-[16px]" />
                         <x-input-error class="mt-2" :messages="$errors->get('name')" />
                     </div>
 

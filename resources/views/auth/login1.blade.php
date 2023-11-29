@@ -38,7 +38,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="name@company.com" required="">
                         </div>
-                        <x-input-error :messages="$errors->get('email')" class="mt-2 input-error" />
+                        <x-input-error :messages="$errors->get('email')" />
 
                         <div>
                             <label for="password"
@@ -47,7 +47,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required autocomplete="current-password">
                         </div>
-                        <x-input-error :messages="$errors->get('password')" class="mt-2 input-error" />
+                        <x-input-error :messages="$errors->get('password')" />
 
                         <div class="flex items-center justify-between">
                             <div class="flex items-start">

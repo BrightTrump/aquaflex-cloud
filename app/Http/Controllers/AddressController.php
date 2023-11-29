@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreAddressRequest;
-use Illuminate\Http\RedirectResponse;
+use App\Models\User;
+use App\Models\Address;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\StoreAddressRequest;
 
 class AddressController extends Controller
 {
@@ -25,7 +27,7 @@ class AddressController extends Controller
      */
     public function edit(): View
     {
-        return view('customer.address.edit');
+        return view('customer.address.edit', $this->customerCredentials());
     }
 
     /**
@@ -45,5 +47,28 @@ class AddressController extends Controller
     public function store(StoreAddressRequest $request): RedirectResponse
     {
         return redirect('/customer/address');
+    }
+
+    private function customerCredentials()
+    {
+        $user = User::where('id', auth()->user()->id)
+            ->with('userAddress')
+            ->first();
+
+        if ($user->userAddress()->first()) {
+            $address = Address::findOrFail($user->userAddress()->first()->address_id);
+        }
+        return [
+            'user' => $user,
+            'address' => $address ?? [
+                'address_line1' => null,
+                'address_line2' => null,
+                'city' => null,
+                'state' => null,
+                'lga' => null,
+                'country' => null,
+            ]
+        ];
+
     }
 }

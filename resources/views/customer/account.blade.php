@@ -6,7 +6,7 @@
         <h1 class="font-semibold text-3xl w-full border-b py-5 px-10">Account Overview</h1>
         <div class="px-10 py-10 flex flex-col gap-20">
             {{-- Profile --}}
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-8 ">
 
                 <h1 class="font-semibold text-3xl flex justify-between w-full">Profile <a
                         href="{{ route('edit.profile') }}"
@@ -16,12 +16,12 @@
                 </h1>
 
                 <div class="grid grid-cols-2 gap-10 xs:max-sm:grid-cols-1">
-                    <div class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-5 capitalize">
                         <h1 class="text-2xl">First Name</h1>
                         <div class="h-20 bg-gray-50 rounded flex items-center px-6 font-medium text-[16px]">
                             {{ $name[0] }}</div>
                     </div>
-                    <div class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-5 capitalize">
                         <h1 class="text-2xl">Last Name</h1>
                         <div class="h-20 bg-gray-50 rounded flex items-center px-6 font-medium text-[16px]">
                             {{ $name[1] }}</div>
