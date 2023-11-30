@@ -20,7 +20,7 @@ class ProfileUpdateRequest extends FormRequest
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255',
             Rule::unique(User::class)->ignore($this->user()->id)],
             'phone_number'=> ['required', 'string',  'min:14', 'starts_with:+234', 'max:14'],
-            'dob' => ['required', 'date']
+            'dob' => ['required', 'date', 'before_or_equal:'. now()->subYears(14)->format('Y-m-d')]
         ];
     }
 

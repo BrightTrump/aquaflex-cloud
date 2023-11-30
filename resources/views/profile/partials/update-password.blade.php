@@ -1,9 +1,10 @@
 <x-app-layout title="Update Password">
     <div class="flex flex-col bg-white border p-10 border-gray-150 rounded-lg min-h-[82vh]">
         @if (session('status') === 'password-updated')
-                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                        class="text-2xl mb-10 bg-green-400 py-6 px-4 rounded-md text-white dark:text-gray-400 font-medium">Password Updated Successfully!</p>
-                @endif
+            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
+                class="text-2xl mb-10 bg-green-400 py-6 px-4 rounded-md text-white dark:text-gray-400 font-medium">
+                Password Updated Successfully!</p>
+        @endif
         <header class="space-y-4">
             <h2 class="text-4xl font-medium text-gray-900 dark:text-gray-100">
                 {{ __('Update Password') }}
@@ -25,8 +26,8 @@
                 <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
             </div>
 
-            <div  class="space-y-4">
-                <x-input-label for="password" :value="__('New Password')"/>
+            <div class="space-y-4">
+                <x-input-label for="password" :value="__('New Password')" />
                 <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
                     autocomplete="new-password" />
                 <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
@@ -40,10 +41,9 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <button type="submit" class="bg-primary-500 px-6 py-6 text-white text-2xl font-medium">Update Password</button>
+                <button type="submit" class="bg-primary-500 px-6 py-6 text-white text-2xl font-medium">Update
+                    Password</button>
             </div>
         </form>
     </div>
 </x-app-layout>
-
-

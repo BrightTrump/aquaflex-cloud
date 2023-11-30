@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 use App\Models\User;
+use App\Models\UserAddress;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 
@@ -26,34 +27,13 @@ class CustomerController extends Controller
             ->with('userAddress')
             ->first();
 
-        if($user->userAddress()->first()){
-            $address = Address::findOrFail($user->userAddress()->first()->address_id);
-        }
+        $userAddress = UserAddress::where('user_id', auth()->user()->id)
+            ->where('is_default', true)->first();
 
-        if(request()->routeIs('address.edit')){
-            return [
-                'user' => $user,
-                'address' => $address ?? [
-                    'address_line1' => null,
-                    'address_line2' => null,
-                    'city' => null,
-                    'state' => null,
-                    'lga' => null,
-                    'country' => null,
-                ]
-            ];
-        }
+        $address = Address::findOrFail($userAddress->address_id);
 
         return [
             'user' => $user,
-            // 'address' => $address ?? [
-            //     'address_line1' => null,
-            //     'address_line2' => null,
-            //     'city' => null,
-            //     'state' => null,
-            //     'lga' => null,
-            //     'country' => null,
-            // ]
             'address' => $address ?? null
         ];
 

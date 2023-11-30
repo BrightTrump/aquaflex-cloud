@@ -61,7 +61,7 @@
                     <h1 class="text-2xl">Your Default Shipping Address:</h1>
                     @if ($address)
                         <div class="h-auto bg-gray-50 rounded flex flex-col px-6 py-10 text-[16px] relative">
-                            <a href="/customer/address/edit"
+                            <a href="{{route('address.edit', $address->id) }}"
                                 class="text-xl font-medium border border-primary-500 py-2 px-4 text-primary-500 absolute right-8 top-6">Edit</a>
                             <p>{{ Auth::user()->name }}</p>
                             <p>{{ $address['address_line1'] }}, {{ $address['city'] }}, {{ $address['state'] }},
@@ -70,8 +70,9 @@
                         </div>
                     @else
                         <div class="mt-8">
-                            <a href="/customer/address/edit"
-                                class="text-2xl font-medium border border-primary-500 py-4 px-6 text-primary-500">Add Address</a>
+                            <a href="/customer/address/add"
+                                class="text-2xl font-medium border border-primary-500 py-4 px-6 text-primary-500">Add
+                                Address</a>
                         </div>
                     @endif
                 </div>

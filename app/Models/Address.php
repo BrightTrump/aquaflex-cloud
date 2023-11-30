@@ -10,6 +10,14 @@ class Address extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'address_line1',
+        'address_line2',
+        'state',
+        'city',
+        'lga',
+    ];
+
     public function userAddress(): HasMany
     {
         return $this->hasMany(UserAddress::class);

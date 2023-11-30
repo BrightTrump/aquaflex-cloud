@@ -37,5 +37,9 @@
                     </g>
                 </svg>Pending Reviews</a>
         </li>
+        <li>
+            <a href="/customer/address">
+                Address Book</a>
+        </li>
     </ul>
 </aside>
