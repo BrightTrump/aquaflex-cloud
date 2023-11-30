@@ -23,6 +23,8 @@ class CustomerController extends Controller
     }
 
     private function customerCredentials(){
+        $address = null;
+
         $user    = User::where('id', auth()->user()->id)
             ->with('userAddress')
             ->first();
@@ -30,7 +32,9 @@ class CustomerController extends Controller
         $userAddress = UserAddress::where('user_id', auth()->user()->id)
             ->where('is_default', true)->first();
 
-        $address = Address::findOrFail($userAddress->address_id);
+        if($userAddress){
+            $address = Address::findOrFail($userAddress->address_id);
+        }
 
         return [
             'user' => $user,
