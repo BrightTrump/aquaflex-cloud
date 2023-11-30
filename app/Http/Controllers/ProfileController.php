@@ -43,7 +43,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return back()->with('status', 'Profile Updated Successfully!');
+        return back()->with('status', 'profile-updated');
     }
 
     /**

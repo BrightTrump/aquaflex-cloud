@@ -8,12 +8,11 @@
 
             {{-- Profile --}}
             <div class="flex flex-col gap-8">
-                @if (session('status'))
-                    <div x-data="setTimeout(()=>{
-                        })" x-show="toast.show"
-                        class=" py-6 px-10 bg-green-400  z-10  rounded-lg text-white font-medium text-2xl">
-                        {{ session('status') }}
-                    </div>
+
+                @if (session('status') === 'profile-updated')
+                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 3000)"
+                        class="text-2xl mb-2 bg-green-400 py-6 px-4 rounded-md text-white dark:text-gray-400 font-medium">
+                        Profile Updated Successfully!</p>
                 @endif
 
                 <h1 class="font-semibold text-3xl flex justify-between w-full">Edit Profile
@@ -44,7 +43,12 @@
 
                     <div class="flex flex-col gap-5">
                         <label class="text-2xl">Date of Birth</label>
-                        <input type="date" name="dob" value="{{ $user->dob }}" required
+                        <input
+                            type="date"
+                            name="dob"
+                            value="{{ $user->dob }}"
+                            max="{{ date('Y-m-d', strtotime('-14 years')) }}"
+                            required
                             class="h-20 bg-gray-50 rounded flex items-center px-6 font-medium text-[16px]">
                             <x-input-error class="mt-2" :messages="$errors->get('dob')" />
                     </div>

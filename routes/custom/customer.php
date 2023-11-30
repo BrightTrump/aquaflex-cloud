@@ -15,10 +15,12 @@ Route::middleware(['auth', 'verified','isUser'])->prefix('customer')->group(func
 
     // Address
     Route::get('/address', [AddressController::class, 'addressBook']);
-    Route::get('/address/add', [AddressController::class, 'addAddress']);
 
-    Route::get('/address/edit', [AddressController::class, 'edit'])->name('address.edit')->middleware(['isProfileUpdated']);
-    Route::post('/address/edit', [AddressController::class, 'edit'])->name('address.update');
+    Route::get('/address/add', [AddressController::class, 'addAddress'])->middleware(['isProfileUpdated']);
+
+    Route::get('/address/edit/{id}', [AddressController::class, 'edit'])->name('address.edit')->middleware(['isProfileUpdated']);
+
+    Route::patch('/address/edit/{id}', [AddressController::class, 'update'])->name('address.update');
 
     Route::post('/address/store', [AddressController::class, 'store'])->name('address.store');
 });
